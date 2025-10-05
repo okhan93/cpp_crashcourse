@@ -1,0 +1,20 @@
+# Compiled executables
+session1
+session2
+session3
+session4
+session5
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Compiled object files
+*.o
+*.obj
+
+# Other
+a.out
