@@ -73,6 +73,7 @@ struct Vec3 {
     float dot(const Vec3& other) const {
         // YOUR CODE HERE
         // Return x*other.x + y*other.y + z*other.z
+        return x*other.x + y*other.y + z*other.z;
     }
 
     // TODO 1g: Cross product
@@ -83,6 +84,12 @@ struct Vec3 {
         // result.x = y*other.z - z*other.y
         // result.y = z*other.x - x*other.z
         // result.z = x*other.y - y*other.x
+     return {y*other.z - z*other.y,z*other.x - x*other.z,x*other.y - y*other.x};
+        
+        
+
+
+
     }
 
     void print(const std::string& label) const {
@@ -108,6 +115,15 @@ struct Quaternion {
         // y = axis.y * sin_half
         // z = axis.z * sin_half
         // w = cos(half_angle)
+        Vec3 normalizedAxis = axis.normalize();
+        float half_angle = angleRadians/2;
+        float sin_half = sin(half_angle);
+
+        x = normalizedAxis.x * sin_half;
+        y = normalizedAxis.y * sin_half;
+        z = normalizedAxis.z * sin_half;
+        this->w = cos(half_angle);
+
     }
 
     // Default constructor (no rotation)
@@ -124,23 +140,29 @@ struct Quaternion {
         // result.y = w*q.y - x*q.z + y*q.w + z*q.x;
         // result.z = w*q.z + x*q.y - y*q.x + z*q.w;
         // return result;
+        Quaternion result;
+        result.w = w*q.w - x*q.x - y*q.y - z*q.z;
+        result.x = w*q.x + x*q.w + y*q.z - z*q.y;
+        result.y = w*q.y - x*q.z + y*q.w + z*q.x;
+        result.z = w*q.z + x*q.y - y*q.x + z*q.w;
+        return result;
+
     }
 
     // TODO 2c: Rotate a vector by this quaternion
     // Used for: Transforming positions/directions
     Vec3 rotate(const Vec3& v) const {
         // YOUR CODE HERE
-        // Convert vector to quaternion: qv = (v.x, v.y, v.z, 0)
-        // Quaternion inverse = conjugate = (-x, -y, -z, w)
-        // result = this * qv * inverse
-        // Return Vec3(result.x, result.y, result.z)
-
-        // Simplified formula (more efficient):
-        Vec3 qvec = {x, y, z};
+        // Simplified formula (more efficient than full quaternion multiplication):
+        // 1. Extract vector part of quaternion: qvec = {x, y, z}
+        // 2. Calculate: uv = qvec.cross(v)
+        // 3. Calculate: uuv = qvec.cross(uv)
+        // 4. Return: v + (uv * (2.0f * w)) + (uuv * 2.0f)
+        Vec3 qvec = {x,y,z};
         Vec3 uv = qvec.cross(v);
         Vec3 uuv = qvec.cross(uv);
 
-        return v + (uv * (2.0f * w)) + (uuv * 2.0f);
+        return v+(uv*(2.0f * w))+(uuv*2.0f);
     }
 
     void print(const std::string& label) const {
@@ -169,6 +191,7 @@ public:
         // 1. Rotate the local point by the rotation
         // 2. Add the position
         // return rotation.rotate(localPoint) + position;
+        return rotation.rotate(localPoint)+position;
     }
 
     // TODO 3b: Get forward direction vector
@@ -177,6 +200,8 @@ public:
         // YOUR CODE HERE
         // Local forward is (0, 0, -1) in OpenGL/OptiTrack convention
         // Rotate it by the current rotation
+        Vec3 local_forward = {0,0,-1};
+        return rotation.rotate(local_forward);
     }
 
     // TODO 3c: Get up direction vector
@@ -184,6 +209,8 @@ public:
         // YOUR CODE HERE
         // Local up is (0, 1, 0)
         // Rotate it by the current rotation
+        Vec3 local_up= {0,1,0};
+        return rotation.rotate(local_up);
     }
 
     // TODO 3d: Get right direction vector
@@ -191,6 +218,8 @@ public:
         // YOUR CODE HERE
         // Local right is (1, 0, 0)
         // Rotate it by the current rotation
+        Vec3 local_right = {1,0,0};
+        return rotation.rotate(local_right);
     }
 
     void print(const std::string& label) const {
