@@ -65,6 +65,9 @@ public:
         // [1, 0, 0]
         // [0, 1, 0]
         // [0, 0, 1]
+        m[0][0] = 1; m[0][1] = 0; m[0][2] = 0;
+        m[1][0] = 0; m[1][1] = 1; m[1][2] = 0;
+        m[2][0] = 0; m[2][1] = 0; m[2][2] = 1;
     }
 
     // Constructor from values
@@ -79,9 +82,11 @@ public:
     // TODO 1b: Matrix-vector multiplication (apply transformation)
     Vec3 operator*(const Vec3& v) const {
         // YOUR CODE HERE
-        // result.x = m[0][0]*v.x + m[0][1]*v.y + m[0][2]*v.z
-        // result.y = m[1][0]*v.x + m[1][1]*v.y + m[1][2]*v.z
-        // result.z = m[2][0]*v.x + m[2][1]*v.y + m[2][2]*v.z
+        Vec3 result;
+        result.x = m[0][0]*v.x + m[0][1]*v.y + m[0][2]*v.z;
+        result.y = m[1][0]*v.x + m[1][1]*v.y + m[1][2]*v.z;
+        result.z = m[2][0]*v.x + m[2][1]*v.y + m[2][2]*v.z;
+        return {result};
     }
 
     // TODO 1c: Matrix-matrix multiplication (combine transformations)
@@ -98,8 +103,7 @@ public:
         // [1,    0,           0        ]
         // [0, cos(θ),    -sin(θ)]
         // [0, sin(θ),     cos(θ)]
-    }
-
+    }   
     // TODO 1e: Create rotation matrix around Y axis
     static Mat3 rotationY(float angleRadians) {
         // YOUR CODE HERE

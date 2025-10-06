@@ -948,6 +948,404 @@ Quaternion slerp(Quaternion q1, Quaternion q2, float t) {
 
 ---
 
+## 7.5. Understanding the Tests - Practical Walkthrough
+
+This section explains what each test in `session3_motion_tracking.cpp` does **practically** to help you gain real-world understanding.
+
+### Test 1: Vector Operations - Building Blocks
+
+**What it tests:** All fundamental vector operations you'll use in motion tracking.
+
+#### Test 1a: Vector Addition
+```cpp
+Vec3 v1 = {1.0f, 2.0f, 3.0f};
+Vec3 v2 = {4.0f, 5.0f, 6.0f};
+Vec3 sum = v1 + v2;
+// Expected: (5, 7, 9)
+```
+
+**Practical meaning:**
+```
+v1 = Current headset position
+v2 = Movement offset (velocity * time)
+sum = New headset position after movement
+
+Real OptiTrack scenario:
+- Headset at (1, 2, 3)
+- User moves (+4, +5, +6) in one frame
+- New position: (5, 7, 9)
+```
+
+**Visual:**
+```
+    v2 (4,5,6)
+      /
+     /
+    *-----v1+v2 (5,7,9)
+   /
+  /
+ * v1 (1,2,3)
+```
+
+#### Test 1b: Magnitude
+```cpp
+Vec3 v = {3.0f, 4.0f, 0.0f};
+float mag = v.magnitude();
+// Expected: 5.0
+```
+
+**Practical meaning:**
+```
+3-4-5 right triangle!
+  *
+  |\
+4 | \  5 (magnitude)
+  |  \
+  *---*
+    3
+
+Real scenario:
+- Velocity vector is (3, 4, 0) m/s
+- Magnitude = 5.0 m/s = actual speed
+- Used to check: "Is surgeon's hand moving too fast?"
+```
+
+#### Test 1c: Normalization
+```cpp
+Vec3 v = {3.0f, 4.0f, 0.0f};
+Vec3 norm = v.normalize();
+// Expected: (0.6, 0.8, 0.0)
+```
+
+**Practical meaning:**
+```
+Take direction, remove magnitude:
+v = (3, 4, 0), magnitude = 5
+normalized = (3/5, 4/5, 0/5) = (0.6, 0.8, 0)
+
+New magnitude = sqrt(0.6² + 0.8²) = 1.0
+
+Real scenario:
+- You know velocity is (3, 4, 0)
+- You only care about DIRECTION user is moving
+- Normalize to get pure direction: (0.6, 0.8, 0)
+- Now you can say "move 2 meters in that direction": direction * 2.0
+```
+
+#### Test 1d: Dot Product
+```cpp
+Vec3 v1 = {1.0f, 0.0f, 0.0f};  // X-axis (right)
+Vec3 v2 = {0.0f, 1.0f, 0.0f};  // Y-axis (up)
+float dot = v1.dot(v2);
+// Expected: 0.0 (perpendicular!)
+```
+
+**Practical meaning:**
+```
+X-axis (right) and Y-axis (up) are perpendicular.
+Dot product = 0 confirms they're 90° apart.
+
+Visual (top view):
+     Y (up)
+     |
+     |
+     +------ X (right)
+
+dot(X, Y) = 0 → perpendicular
+
+Real scenario - "Is target in front of me?":
+Vec3 forward = headset.forward();
+Vec3 toTarget = (target - headset.position).normalize();
+float dot = forward.dot(toTarget);
+
+if (dot > 0.7)  → target is in front (< 45° away)
+if (dot ≈ 0)    → target is to the side (≈ 90° away)
+if (dot < 0)    → target is behind (> 90° away)
+```
+
+#### Test 1e: Cross Product
+```cpp
+Vec3 v1 = {1.0f, 0.0f, 0.0f};  // X-axis
+Vec3 v2 = {0.0f, 1.0f, 0.0f};  // Y-axis
+Vec3 cross = v1.cross(v2);
+// Expected: (0, 0, 1) - Z-axis!
+```
+
+**Practical meaning:**
+```
+Cross product finds perpendicular vector.
+X × Y = Z (right-hand rule)
+
+Visual:
+      Y (up)
+      |
+      |
+      +------ X (right)
+     /
+    /
+   Z (result - forward)
+
+Right-hand rule:
+1. Point fingers along X (right)
+2. Curl them toward Y (up)
+3. Thumb points to Z (forward/out of screen)
+
+Real scenario - "Find camera's right vector":
+Vec3 worldUp = {0, 1, 0};
+Vec3 cameraForward = camera.forward();
+Vec3 cameraRight = worldUp.cross(cameraForward);
+// Now you have all 3 axes of camera!
+```
+
+### Test 2: Quaternion Rotation - The Core of Tracking
+
+**What it tests:** Rotating a vector using a quaternion (what OptiTrack does every frame).
+
+```cpp
+// Rotate 90° around Y-axis
+Quaternion rot(Vec3{0.0f, 1.0f, 0.0f}, M_PI/2);
+Vec3 point = {1.0f, 0.0f, 0.0f};
+Vec3 rotated = rot.rotate(point);
+// Expected: (0, 0, -1)
+```
+
+**Practical meaning:**
+```
+Top view (looking down Y-axis):
+
+Before rotation:           After 90° rotation:
+       Z                          Z
+       |                          |
+       |                          |
+       +------ X                  +------ X
+      point (1,0,0)            rotated (0,0,-1)
+
+Point at (1, 0, 0) = "to the right"
+Rotate 90° around Y = "turn left"
+Result: (0, 0, -1) = "now pointing forward"
+```
+
+**Step-by-step visualization:**
+```
+1. Start: point = (1, 0, 0)
+
+   Top view:
+        ↑ Z
+        |
+   -----+----→ X
+        |  *point
+        |
+
+2. Rotate 90° around Y (counterclockwise from above)
+
+3. End: rotated = (0, 0, -1)
+
+   Top view:
+        ↑ Z
+        *rotated
+   -----+----→ X
+        |
+        |
+```
+
+**Real OptiTrack scenario:**
+```cpp
+// Headset is rotated 90° to the left (around Y)
+Quaternion headsetRotation = ...;  // 90° around Y
+
+// In the headset's local space, "forward" is (0, 0, -1)
+Vec3 localForward = {0.0f, 0.0f, -1.0f};
+
+// What direction is the user actually looking in world space?
+Vec3 worldForward = headsetRotation.rotate(localForward);
+
+// If headset is rotated 90° left, user is looking along +X axis
+```
+
+**Why this matters:**
+- OptiTrack gives you headset rotation as quaternion
+- You need to know which direction user is looking
+- You rotate the local "forward" direction to get world direction
+- This happens 120+ times per second in VR!
+
+### Test 3: Transform Operations - Putting It All Together
+
+**What it tests:** How OptiTrack represents rigid bodies (position + rotation).
+
+#### Test 3a: transformPoint - Local to World
+```cpp
+Transform headset(Vec3{2.0f, 1.5f, 3.0f}, Quaternion(Vec3{0,1,0}, M_PI/2));
+Vec3 localMarker = {0.1f, 0.0f, 0.0f};
+Vec3 worldMarker = headset.transformPoint(localMarker);
+// Expected: (2.0, 1.5, 2.9)
+```
+
+**Practical meaning:**
+```
+Complete OptiTrack scenario:
+
+1. Headset is in the room at position (2, 1.5, 3)
+2. Headset is rotated 90° around Y-axis (facing left)
+3. Marker is attached 0.1m to the RIGHT of headset center (local coordinates)
+4. Where is the marker in world space?
+
+Step-by-step:
+┌─────────────────────────────────────────────────┐
+│ STEP 1: Local marker position                  │
+│         (0.1, 0, 0) = "0.1m to the right"      │
+└─────────────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────────────┐
+│ STEP 2: Rotate by headset's rotation           │
+│         90° around Y turns "right" into "back"  │
+│         (0.1, 0, 0) → (0, 0, -0.1)             │
+└─────────────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────────────┐
+│ STEP 3: Add headset's position                 │
+│         (0, 0, -0.1) + (2, 1.5, 3)             │
+│         = (2.0, 1.5, 2.9)                      │
+└─────────────────────────────────────────────────┘
+
+Visual (top view):
+       Z
+       |
+   [H] + headset at (2, 1.5, 3), facing left (90° rotated)
+       |
+       +------ X
+       |
+       |
+     marker at (2.0, 1.5, 2.9) - behind headset in world space
+```
+
+**Why this matters:**
+```
+OptiTrack tracks rigid bodies by their markers.
+- Each rigid body has a center position
+- Each marker has a FIXED offset from center (in local space)
+- To render markers or check tracking quality, you need world positions
+- This transform is how you get them!
+
+Real code flow:
+for (int i = 0; i < rigidBody->nMarkers; i++) {
+    Vec3 localOffset = rigidBody->markerLocalPositions[i];
+    Vec3 worldPos = rigidBody.transformPoint(localOffset);
+    renderMarker(worldPos);
+}
+```
+
+#### Test 3b: forward() - Which Way Is It Facing?
+```cpp
+Transform headset(Vec3{0,0,0}, Quaternion(Vec3{0,1,0}, M_PI/2));
+Vec3 forwardDir = headset.forward();
+// Expected: (1, 0, 0) - pointing right in world space!
+```
+
+**Practical meaning:**
+```
+Headset rotated 90° around Y-axis.
+Default forward is (0, 0, -1).
+After 90° rotation, forward becomes (1, 0, 0).
+
+Visual (top view):
+       Z
+       |
+Default forward      After 90° rotation:
+       ↑
+       |                  [H]----→ now forward is RIGHT
+   [H] |
+       |
+       +------ X
+
+Real scenario:
+// Place a virtual menu 0.5m in front of user
+Vec3 headsetPos = headset.getPosition();
+Vec3 lookDir = headset.forward();
+Vec3 menuPos = headsetPos + (lookDir * 0.5f);
+displayMenu(menuPos);
+```
+
+#### Test 3c: up() - Which Way Is Up For This Object?
+```cpp
+Transform rotatedCamera(Vec3{0,0,0}, Quaternion(Vec3{1,0,0}, M_PI));
+Vec3 upDir = rotatedCamera.up();
+// Expected: (0, -1, 0) - pointing DOWN!
+```
+
+**Practical meaning:**
+```
+Camera flipped upside-down (180° around X-axis).
+Default up is (0, 1, 0).
+After 180° flip, up becomes (0, -1, 0).
+
+Visual (side view):
+  Normal camera:          Flipped camera:
+       Y (up)                  Y
+       ↑                       |
+       |                       |
+   [C]-+--→ Z (forward)    [C]-+--→ Z
+                               |
+                               ↓ (0,-1,0) "up" is now down!
+
+Real scenario - detecting if camera is mounted upside-down:
+Vec3 cameraUp = camera.up();
+Vec3 worldUp = {0, 1, 0};
+float dot = cameraUp.dot(worldUp);
+
+if (dot < -0.9) {
+    // Camera is upside-down! Flip the image.
+}
+```
+
+### Putting It All Together - Complete OptiTrack Flow
+
+Here's how all these operations work together in a real VR application:
+
+```cpp
+// FRAME 1: OptiTrack sends data
+sRigidBodyData* headsetData = /* from OptiTrack SDK */;
+
+// 1. Extract position and rotation (quaternion)
+Vec3 position = {headsetData->x, headsetData->y, headsetData->z};
+Quaternion rotation = {headsetData->qx, headsetData->qy,
+                       headsetData->qz, headsetData->qw};
+
+// 2. Create transform
+Transform headset(position, rotation);
+
+// 3. Calculate where user is looking (for rendering, interaction)
+Vec3 lookDirection = headset.forward();
+
+// 4. Check if user is looking at target
+Vec3 toTarget = (targetPos - headset.getPosition()).normalize();
+float alignment = lookDirection.dot(toTarget);
+if (alignment > 0.9) {  // Looking almost directly at it
+    highlightTarget();
+}
+
+// 5. Calculate velocity (is user moving?)
+Vec3 velocity = (position - previousPosition) / deltaTime;
+float speed = velocity.magnitude();
+if (speed > 2.0f) {  // Moving fast
+    enableMotionBlur();
+}
+
+// 6. Transform hand controller position to world space
+Vec3 localControllerOffset = {0.3f, -0.2f, 0.4f};
+Vec3 worldControllerPos = headset.transformPoint(localControllerOffset);
+
+// 7. Check distance to virtual object
+Vec3 toObject = worldControllerPos - virtualObjectPos;
+float distance = toObject.magnitude();
+if (distance < 0.1f) {  // Within 10cm
+    grabObject();
+}
+```
+
+**Every test you completed is a step in this pipeline!**
+
+---
+
 <a name="interview-questions"></a>
 ## 8. Common Interview Questions
 

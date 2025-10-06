@@ -1,0 +1,368 @@
+<!DOCTYPE html><html><head>
+      <title>session1_notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/omarkhan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.19/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- Dark Mode Styles -->
+      <link rel="stylesheet" href="dark-mode.css">
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+      <!-- Dark Mode Script -->
+      <script src="dark-mode.js"></script>
+</head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="session-1-c-essentials-for-motion-tracking---study-notes">Session 1: C++ Essentials for Motion Tracking - Study Notes </h1>
+<h2 id="1-references----core-concept">1. References (<code>&amp;</code>) - Core Concept </h2>
+<h3 id="what-is-a-reference">What is a Reference? </h3>
+<p>A reference is an <strong>alias</strong> to existing data - another name for the same memory location, NOT a copy.</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-int">int</span> x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-int">int</span><span class="token operator">&amp;</span> ref <span class="token operator">=</span> x<span class="token punctuation">;</span>  <span class="token comment">// ref is another name for x</span>
+ref <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>      <span class="token comment">// x is now 10 (same memory location)</span>
+</code></pre><h3 id="why-use-references">Why Use References? </h3>
+<p><strong>Performance:</strong> Avoid expensive copying of large data structures</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">Point3D</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// BAD: Copies entire struct every time (slow, wasteful)</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">process</span><span class="token punctuation">(</span>Point3D point<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// GOOD: Works with original, no copy (fast)</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">process</span><span class="token punctuation">(</span>Point3D<span class="token operator">&amp;</span> point<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// BEST: Read-only access, no copy, compiler-enforced safety</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Point3D<span class="token operator">&amp;</span> point<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
+</code></pre><h3 id="the-const-keyword">The <code>const</code> Keyword </h3>
+<p>Use <code>const</code> to indicate you won't modify the data:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Read-only: calculateDistance doesn't need to modify points</span>
+<span class="token keyword keyword-float">float</span> <span class="token function">calculateDistance</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Point3D<span class="token operator">&amp;</span> p1<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> Point3D<span class="token operator">&amp;</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// p1.x = 0;  // COMPILER ERROR! const prevents bugs</span>
+    <span class="token keyword keyword-float">float</span> dx <span class="token operator">=</span> p2<span class="token punctuation">.</span>x <span class="token operator">-</span> p1<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>dx<span class="token operator">*</span>dx <span class="token operator">+</span> dy<span class="token operator">*</span>dy <span class="token operator">+</span> dz<span class="token operator">*</span>dz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Needs to modify: updatePosition changes the point</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">updatePosition</span><span class="token punctuation">(</span>Point3D<span class="token operator">&amp;</span> point<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> dx<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> dy<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> dz<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    point<span class="token punctuation">.</span>x <span class="token operator">+=</span> dx<span class="token punctuation">;</span>  <span class="token comment">// Must modify - can't use const</span>
+    point<span class="token punctuation">.</span>y <span class="token operator">+=</span> dy<span class="token punctuation">;</span>
+    point<span class="token punctuation">.</span>z <span class="token operator">+=</span> dz<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="decision-tree-when-to-use-what">Decision Tree: When to Use What? </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Need to modify the data?
+├─ YES → Use `Type&amp;`
+└─ NO → Is it a large struct/object?
+    ├─ YES → Use `const Type&amp;`
+    └─ NO (small: int, float, etc.) → Pass by value `Type`
+</code></pre><h3 id="common-misconception-references-in-assignment">Common Misconception: References in Assignment </h3>
+<p><strong>References are for FUNCTION PARAMETERS, not regular assignment:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// ✓ CORRECT - References in function parameters</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">modify</span><span class="token punctuation">(</span>Point3D<span class="token operator">&amp;</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// &amp; makes it a reference parameter</span>
+    p<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Point3D<span class="token operator">&amp;</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// &amp; for read-only reference</span>
+    <span class="token keyword keyword-float">float</span> x <span class="token operator">=</span> p<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ✗ WRONG - Don't use &amp; in regular assignment for simple types</span>
+<span class="token keyword keyword-float">float</span> largest <span class="token operator">=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>   <span class="token comment">// ✓ Correct - simple assignment</span>
+<span class="token keyword keyword-float">float</span><span class="token operator">&amp;</span> largest <span class="token operator">=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>  <span class="token comment">// ✗ Wrong - unnecessary reference</span>
+
+<span class="token comment">// ✓ OK - Reference can be useful for complex repeated access</span>
+Point3D<span class="token operator">&amp;</span> current <span class="token operator">=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// Avoid writing markers[i] many times</span>
+current<span class="token punctuation">.</span>x <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+current<span class="token punctuation">.</span>y <span class="token operator">+=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+current<span class="token punctuation">.</span>z <span class="token operator">+=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Rule of thumb:</strong></p>
+<ul>
+<li><strong>Small types (int, float, char):</strong> Just copy them with <code>=</code> - it's fast!</li>
+<li><strong>Large types (structs, objects):</strong> Use <code>&amp;</code> in function parameters to avoid copying</li>
+<li><strong>Regular variables:</strong> Usually just use <code>=</code>, not <code>&amp;</code></li>
+</ul>
+<h2 id="2-arrays-and-pointers----the-basics">2. Arrays and Pointers (<code>*</code>) - The Basics </h2>
+<h3 id="critical-concept-arrays-dont-know-their-own-size">Critical Concept: Arrays Don't Know Their Own Size </h3>
+<p><strong>In C++, when you pass an array to a function, you MUST also pass its size.</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// You create an array - YOU know it has 4 elements</span>
+Point3D markers<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">{</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Function receives a POINTER to the array (doesn't know size!)</span>
+Point3D <span class="token function">calculateCentroid</span><span class="token punctuation">(</span>Point3D<span class="token operator">*</span> markers<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> numMarkers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// markers is a pointer - can't tell how many elements</span>
+    <span class="token comment">// numMarkers tells us: "this array has 4 elements"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// When calling, YOU provide both the array and the count</span>
+Point3D centroid <span class="token operator">=</span> <span class="token function">calculateCentroid</span><span class="token punctuation">(</span>markers<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                            <span class="token comment">// ^^ you tell it the size</span>
+</code></pre><h3 id="why-optitrack-works-this-way">Why OptiTrack Works This Way </h3>
+<p>OptiTrack <strong>creates</strong> the array, so it already knows the size:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// OptiTrack SDK provides BOTH array and count:</span>
+sFrameOfMocapData<span class="token operator">*</span> frameData<span class="token punctuation">;</span>
+<span class="token keyword keyword-int">int</span> markerCount <span class="token operator">=</span> frameData<span class="token operator">-&gt;</span>nMarkers<span class="token punctuation">;</span>      <span class="token comment">// "I found 47 markers"</span>
+MarkerData<span class="token operator">*</span> markers <span class="token operator">=</span> frameData<span class="token operator">-&gt;</span>Markers<span class="token punctuation">;</span>   <span class="token comment">// Array of 47 markers</span>
+
+<span class="token comment">// You use both pieces of info:</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> markerCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">processMarker</span><span class="token punctuation">(</span>markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="accessing-array-elements">Accessing Array Elements </h3>
+<p>Use <code>[]</code> to access elements by index:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Point3D<span class="token operator">*</span> markers<span class="token punctuation">;</span>  <span class="token comment">// Pointer to array</span>
+<span class="token keyword keyword-int">int</span> numMarkers <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numMarkers<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>  <span class="token comment">// Access x field of i-th marker</span>
+    markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>  <span class="token comment">// Access y field of i-th marker</span>
+    markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>z<span class="token punctuation">;</span>  <span class="token comment">// Access z field of i-th marker</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="compound-assignment-operators">Compound Assignment Operators </h3>
+<p>These are shortcuts for common operations:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Long form vs. compound form</span>
+x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>    →    x <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span>     <span class="token comment">// Add and assign</span>
+x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">;</span>    →    x <span class="token operator">-=</span> <span class="token number">3</span><span class="token punctuation">;</span>     <span class="token comment">// Subtract and assign</span>
+x <span class="token operator">=</span> x <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>    →    x <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>     <span class="token comment">// Multiply and assign</span>
+x <span class="token operator">=</span> x <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">;</span>    →    x <span class="token operator">/=</span> <span class="token number">4</span><span class="token punctuation">;</span>     <span class="token comment">// Divide and assign</span>
+</code></pre><p><strong>Real example from centroid calculation:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Accumulating values</span>
+centroid<span class="token punctuation">.</span>x <span class="token operator">+=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>  <span class="token comment">// Same as: centroid.x = centroid.x + markers[i].x</span>
+
+<span class="token comment">// Computing average</span>
+centroid<span class="token punctuation">.</span>x <span class="token operator">/=</span> numMarkers<span class="token punctuation">;</span>    <span class="token comment">// Same as: centroid.x = centroid.x / numMarkers</span>
+</code></pre><h3 id="loop-increment-i-vs-i">Loop Increment: <code>i++</code> vs <code>++i</code> </h3>
+<p>Both increment <code>i</code> by 1, but subtle difference:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numMarkers<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>   <span class="token comment">// Post-increment (common)</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numMarkers<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>   <span class="token comment">// Pre-increment (slightly more efficient)</span>
+</code></pre><p><strong>For simple loops, either works fine.</strong> Some C++ developers prefer <code>++i</code> as a best practice (marginally faster in some cases), but modern compilers optimize both to the same code.</p>
+<h3 id="typical-pattern-sum-and-average">Typical Pattern: Sum and Average </h3>
+<p>Common in motion tracking - calculate average position:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Step 1: Initialize accumulator to zero</span>
+Point3D centroid <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Step 2: Sum all values</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numMarkers<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    centroid<span class="token punctuation">.</span>x <span class="token operator">+=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    centroid<span class="token punctuation">.</span>y <span class="token operator">+=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    centroid<span class="token punctuation">.</span>z <span class="token operator">+=</span> markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Step 3: Divide by count to get average</span>
+centroid<span class="token punctuation">.</span>x <span class="token operator">/=</span> numMarkers<span class="token punctuation">;</span>
+centroid<span class="token punctuation">.</span>y <span class="token operator">/=</span> numMarkers<span class="token punctuation">;</span>
+centroid<span class="token punctuation">.</span>z <span class="token operator">/=</span> numMarkers<span class="token punctuation">;</span>
+</code></pre><h2 id="3-accessing-struct-members">3. Accessing Struct Members </h2>
+<p>Use the dot operator (<code>.</code>) to access fields:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Point3D marker <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">2.0f</span><span class="token punctuation">,</span> <span class="token number">3.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> x <span class="token operator">=</span> marker<span class="token punctuation">.</span>x<span class="token punctuation">;</span>  <span class="token comment">// Access x field</span>
+marker<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">5.0f</span><span class="token punctuation">;</span>     <span class="token comment">// Modify y field</span>
+</code></pre><h2 id="4-console-output-in-c">4. Console Output in C++ </h2>
+<h3 id="the-stdcout-stream">The <code>std::cout</code> Stream </h3>
+<p>C++ uses <strong>stream operators</strong> for output (very different from <code>print()</code> in Python or <code>printf()</code> in C):</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span>  <span class="token comment">// Required for std::cout</span></span>
+
+<span class="token comment">// Chain multiple values with &lt;&lt; operator</span>
+std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello"</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"World"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token comment">// Mix strings and variables</span>
+<span class="token keyword keyword-int">int</span> x <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The answer is: "</span> <span class="token operator">&lt;&lt;</span> x <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token comment">// Print struct fields</span>
+Point3D p <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">2.0f</span><span class="token punctuation">,</span> <span class="token number">3.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Point: ("</span> <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+</code></pre><h3 id="key-differences-from-other-languages">Key Differences from Other Languages </h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td><code>print(f"Point: ({p.x}, {p.y}, {p.z})")</code></td>
+</tr>
+<tr>
+<td>C</td>
+<td><code>printf("Point: (%f, %f, %f)\n", p.x, p.y, p.z);</code></td>
+</tr>
+<tr>
+<td>C++</td>
+<td><code>std::cout &lt;&lt; "Point: (" &lt;&lt; p.x &lt;&lt; ", " &lt;&lt; p.y &lt;&lt; ", " &lt;&lt; p.z &lt;&lt; ")" &lt;&lt; std::endl;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-components">Common Components </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>std<span class="token double-colon punctuation">::</span>cout          <span class="token comment">// "standard character output stream"</span>
+<span class="token operator">&lt;&lt;</span>                 <span class="token comment">// Stream insertion operator (chains values)</span>
+std<span class="token double-colon punctuation">::</span>endl          <span class="token comment">// End line (prints newline + flushes buffer)</span>
+<span class="token string">"\n"</span>               <span class="token comment">// Just newline (faster, doesn't flush)</span>
+</code></pre><h3 id="example-from-todo-4">Example from TODO 4 </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-void">void</span> <span class="token function">printPoint</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Point3D<span class="token operator">&amp;</span> p<span class="token punctuation">,</span> <span class="token keyword keyword-const">const</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span> label<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> label <span class="token operator">&lt;&lt;</span> <span class="token string">": ("</span>
+              <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>x <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span>
+              <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>y <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span>
+              <span class="token operator">&lt;&lt;</span> p<span class="token punctuation">.</span>z <span class="token operator">&lt;&lt;</span> <span class="token string">")"</span>
+              <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Output: "Head: (1.5, 2.3, 0.8)"</span>
+</code></pre><h3 id="const-char---c-style-strings"><code>const char*</code> - C-Style Strings </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-const">const</span> <span class="token keyword keyword-char">char</span><span class="token operator">*</span> label <span class="token operator">=</span> <span class="token string">"Head"</span><span class="token punctuation">;</span>  <span class="token comment">// Pointer to constant character array</span>
+</code></pre><p>This is C++'s way of handling text strings (there's also <code>std::string</code>, but OptiTrack SDK often uses C-style strings for compatibility).</p>
+<h2 id="5-compiling-and-running-c-programs">5. Compiling and Running C++ Programs </h2>
+<h3 id="the-two-step-process">The Two-Step Process </h3>
+<p>Unlike interpreted languages (Python, JavaScript), C++ requires <strong>compilation</strong> before running:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Step 1: Compile - converts C++ code to executable</span>
+clang++ <span class="token parameter variable">-o</span> session1 session1_pointers_refs.cpp
+
+<span class="token comment"># Step 2: Run - execute the program</span>
+./session1
+</code></pre><h3 id="understanding-the-compile-command">Understanding the Compile Command </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>clang++                              The C++ compiler (Apple's version on Mac)
+   -o session1                       "output" flag - name the executable "session1"
+             session1_pointers_refs.cpp    The source code file to compile
+</code></pre><p><strong>What happens during compilation:</strong></p>
+<ol>
+<li>Compiler reads your <code>.cpp</code> file</li>
+<li>Checks for syntax errors</li>
+<li>Converts C++ code to machine code</li>
+<li>Creates an executable file named <code>session1</code></li>
+</ol>
+<p><strong>Without <code>-o session1</code>:</strong> Compiler creates <code>a.out</code> (default name)</p>
+<h3 id="understanding-the-run-command">Understanding the Run Command </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>./              Means "current directory"
+  session1      The executable file to run
+</code></pre><p><strong>Why the <code>./</code>?</strong> For security, your shell doesn't automatically run programs from the current directory. You must explicitly say "run THIS program from THIS directory".</p>
+<h3 id="common-errors">Common Errors </h3>
+<p><strong>Compile-time errors (syntax issues):</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>error: use of undeclared identifier 'std::count'
+       did you mean 'std::cout'?
+</code></pre><p>→ Fix the code, then compile again</p>
+<p><strong>Link errors (missing libraries):</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>undefined reference to 'sqrt'
+</code></pre><p>→ Need to include proper headers or link libraries</p>
+<p><strong>Runtime errors (crashes during execution):</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Segmentation fault (core dumped)
+</code></pre><p>→ Program compiled successfully but crashes (usually pointer/array issues)</p>
+<h3 id="development-workflow">Development Workflow </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 1. Write code</span>
+<span class="token comment"># 2. Compile</span>
+clang++ <span class="token parameter variable">-o</span> session1 session1_pointers_refs.cpp
+
+<span class="token comment"># 3. If compilation fails, fix errors and go to step 2</span>
+<span class="token comment"># 4. If compilation succeeds, run</span>
+./session1
+
+<span class="token comment"># 5. If output is wrong, fix code and go to step 2</span>
+</code></pre><h2 id="6-performance-tips-for-real-time-systems">6. Performance Tips for Real-Time Systems </h2>
+<h3 id="squaring-numbers">Squaring Numbers </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// SLOWER: Function call overhead</span>
+<span class="token keyword keyword-float">float</span> result <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span>dx<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// FASTER: Direct multiplication</span>
+<span class="token keyword keyword-float">float</span> result <span class="token operator">=</span> dx <span class="token operator">*</span> dx<span class="token punctuation">;</span>
+</code></pre><p><strong>Why it matters:</strong> OptiTrack runs at 120+ FPS. Every millisecond counts when processing thousands of markers.</p>
+<h3 id="returning-values">Returning Values </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Unnecessary temporary variable</span>
+<span class="token keyword keyword-float">float</span> <span class="token function">calculateDistance</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> distance <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>dx<span class="token operator">*</span>dx <span class="token operator">+</span> dy<span class="token operator">*</span>dy <span class="token operator">+</span> dz<span class="token operator">*</span>dz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> distance<span class="token punctuation">;</span>  <span class="token comment">// Extra variable serves no purpose</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Better: Direct return</span>
+<span class="token keyword keyword-float">float</span> <span class="token function">calculateDistance</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>dx<span class="token operator">*</span>dx <span class="token operator">+</span> dy<span class="token operator">*</span>dy <span class="token operator">+</span> dz<span class="token operator">*</span>dz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>When to use temporary variables:</strong></p>
+<ul>
+<li>Debugging/printing intermediate values</li>
+<li>Complex expressions that benefit from being broken up</li>
+<li>Value is used multiple times in the function</li>
+</ul>
+<h3 id="breaking-down-complex-calculations">Breaking Down Complex Calculations </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// More readable and debuggable</span>
+<span class="token keyword keyword-float">float</span> dx <span class="token operator">=</span> p2<span class="token punctuation">.</span>x <span class="token operator">-</span> p1<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> dy <span class="token operator">=</span> p2<span class="token punctuation">.</span>y <span class="token operator">-</span> p1<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> dz <span class="token operator">=</span> p2<span class="token punctuation">.</span>z <span class="token operator">-</span> p1<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+<span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>dx<span class="token operator">*</span>dx <span class="token operator">+</span> dy<span class="token operator">*</span>dy <span class="token operator">+</span> dz<span class="token operator">*</span>dz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// vs. everything in one line (harder to debug)</span>
+<span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span>x<span class="token operator">-</span>p1<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span>x<span class="token operator">-</span>p1<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>p2<span class="token punctuation">.</span>y<span class="token operator">-</span>p1<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span>y<span class="token operator">-</span>p1<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>p2<span class="token punctuation">.</span>z<span class="token operator">-</span>p1<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span>z<span class="token operator">-</span>p1<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="4-application-to-optitrackvr">4. Application to OptiTrack/VR </h2>
+<h3 id="real-world-scenario">Real-World Scenario </h3>
+<p>OptiTrack sends marker data at high frame rates (120+ Hz). You need to:</p>
+<ol>
+<li>Process thousands of markers per frame</li>
+<li>Apply transformations/calibrations</li>
+<li>Calculate distances and centroids</li>
+<li>Do all this WITHOUT copying data unnecessarily</li>
+</ol>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// OptiTrack gives you data like this:</span>
+sFrameOfMocapData<span class="token operator">*</span> frameData<span class="token punctuation">;</span>
+<span class="token keyword keyword-int">int</span> markerCount <span class="token operator">=</span> frameData<span class="token operator">-&gt;</span>nMarkers<span class="token punctuation">;</span>
+MarkerData<span class="token operator">*</span> markers <span class="token operator">=</span> frameData<span class="token operator">-&gt;</span>Markers<span class="token punctuation">;</span>
+
+<span class="token comment">// Process efficiently with references (no copying):</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">applyCalibration</span><span class="token punctuation">(</span>MarkerData<span class="token operator">&amp;</span> marker<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    marker<span class="token punctuation">.</span>x <span class="token operator">+=</span> calibrationOffset<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    marker<span class="token punctuation">.</span>y <span class="token operator">+=</span> calibrationOffset<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    marker<span class="token punctuation">.</span>z <span class="token operator">+=</span> calibrationOffset<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Loop through all markers:</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> markerCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">applyCalibration</span><span class="token punctuation">(</span>markers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Fast, modifies in place</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="5-key-takeaways">5. Key Takeaways </h2>
+<p>✓ <strong>References (<code>&amp;</code>)</strong> let you work with original data without copying<br>
+✓ <strong><code>const</code></strong> communicates intent and prevents accidental modifications<br>
+✓ <strong>Arrays need size passed separately</strong> - C++ arrays don't know their own size<br>
+✓ <strong>Pointers (<code>*</code>)</strong> are used for arrays - access elements with <code>array[i]</code><br>
+✓ <strong>Performance matters</strong> in real-time tracking (avoid copies, use <code>x*x</code> not <code>pow(x,2)</code>)<br>
+✓ <strong>Readable code</strong> uses intermediate variables when it improves clarity<br>
+✓ Understanding references and pointers is CRITICAL for working with OptiTrack SDK</p>
+<h2 id="6-common-interview-topics">6. Common Interview Topics </h2>
+<ul>
+<li>"Why use <code>const &amp;</code> instead of just <code>&amp;</code>?" → Safety, communicates intent, prevents bugs</li>
+<li>"When would you pass by value vs reference?" → Small types by value, large structs by reference</li>
+<li>"How does OptiTrack handle real-time data?" → Pointers and references for zero-copy processing</li>
+<li>"What's the difference between a reference and a pointer?" → (Coming in next session!)</li>
+</ul>
+<hr>
+<p><strong>Next Session Preview:</strong> Pointers (<code>*</code>), arrays, and how to work with OptiTrack's marker arrays</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

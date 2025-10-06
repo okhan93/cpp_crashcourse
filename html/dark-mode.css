@@ -1,0 +1,211 @@
+/*
+ * Shared Dark Mode Styles for C++ Crash Course Notes
+ * Include this file in all HTML notes for consistent dark mode
+ */
+
+/* Dark mode variables */
+:root {
+    --bg-light: #fff;
+    --text-light: #333;
+    --code-bg-light: #f5f5f5;
+    --border-light: #d6d6d6;
+    --heading-light: #000;
+    --link-light: #08c;
+
+    --bg-dark: #1e1e1e;
+    --text-dark: #d4d4d4;
+    --code-bg-dark: #2d2d2d;
+    --border-dark: #404040;
+    --heading-dark: #e0e0e0;
+    --link-dark: #4fc3f7;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--heading-dark) !important;
+}
+
+/* Links */
+body.dark-mode a {
+    color: var(--link-dark) !important;
+}
+
+body.dark-mode a:hover {
+    color: #81d4fa !important;
+}
+
+/* Code blocks */
+body.dark-mode code {
+    background-color: var(--code-bg-dark) !important;
+    color: #ce9178 !important;
+}
+
+body.dark-mode pre {
+    background-color: var(--code-bg-dark) !important;
+    border-color: var(--border-dark) !important;
+}
+
+body.dark-mode pre code {
+    color: var(--text-dark) !important;
+}
+
+/* Code syntax highlighting for dark mode */
+body.dark-mode .token.comment,
+body.dark-mode .token.blockquote {
+    color: #6a9955 !important;
+}
+
+body.dark-mode .token.keyword,
+body.dark-mode .token.rule,
+body.dark-mode .token.important {
+    color: #569cd6 !important;
+}
+
+body.dark-mode .token.string,
+body.dark-mode .token.attr-value,
+body.dark-mode .token.regex {
+    color: #ce9178 !important;
+}
+
+body.dark-mode .token.function,
+body.dark-mode .token.class-name {
+    color: #dcdcaa !important;
+}
+
+body.dark-mode .token.number,
+body.dark-mode .token.boolean {
+    color: #b5cea8 !important;
+}
+
+body.dark-mode .token.operator,
+body.dark-mode .token.punctuation {
+    color: #d4d4d4 !important;
+}
+
+body.dark-mode .token.tag {
+    color: #569cd6 !important;
+}
+
+body.dark-mode .token.property {
+    color: #9cdcfe !important;
+}
+
+/* Tables */
+body.dark-mode table {
+    border-color: var(--border-dark) !important;
+}
+
+body.dark-mode table th {
+    color: var(--heading-dark) !important;
+    background-color: #2d2d2d !important;
+}
+
+body.dark-mode table td,
+body.dark-mode table th {
+    border-color: var(--border-dark) !important;
+}
+
+body.dark-mode table tr:nth-child(even) {
+    background-color: #252525 !important;
+}
+
+/* Blockquotes */
+body.dark-mode blockquote {
+    background-color: #2d2d2d !important;
+    border-left-color: #569cd6 !important;
+    color: #b0b0b0 !important;
+}
+
+/* Horizontal rules */
+body.dark-mode hr {
+    background-color: var(--border-dark) !important;
+}
+
+/* Strong/Bold text */
+body.dark-mode strong {
+    color: #e0e0e0 !important;
+}
+
+/* Deleted text */
+body.dark-mode del {
+    color: #808080 !important;
+}
+
+/* Keyboard shortcuts */
+body.dark-mode kbd {
+    background-color: #2d2d2d !important;
+    border-color: var(--border-dark) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Sidebar TOC */
+body.dark-mode .md-sidebar-toc {
+    background-color: #252525 !important;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .md-sidebar-toc a {
+    color: var(--link-dark) !important;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: #999;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: none;
+    z-index: 1000;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.dark-mode-toggle:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-color: #ccc;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: transparent;
+    color: #888;
+    border-color: #404040;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #555;
+}
+
+/* Smooth transitions */
+body,
+h1, h2, h3, h4, h5, h6,
+a,
+code,
+pre,
+table,
+blockquote,
+.dark-mode-toggle {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

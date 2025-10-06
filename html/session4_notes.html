@@ -1,0 +1,949 @@
+<!DOCTYPE html><html><head>
+      <title>session4_notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/omarkhan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.19/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- Dark Mode Styles -->
+      <link rel="stylesheet" href="dark-mode.css">
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+      <!-- Dark Mode Script -->
+      <script src="dark-mode.js"></script>
+</head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="session-4-optitrack-motion-tracking---study-notes">Session 4: OptiTrack Motion Tracking - Study Notes </h1>
+<h2 id="table-of-contents">Table of Contents </h2>
+<ol>
+<li><a href="#what-is-optitrack">What is OptiTrack?</a></li>
+<li><a href="#how-it-works">How Motion Capture Works</a></li>
+<li><a href="#key-concepts">Key Concepts</a></li>
+<li><a href="#tracking-pipeline">The Tracking Pipeline</a></li>
+<li><a href="#rigid-bodies">Rigid Bodies</a></li>
+<li><a href="#markers">Markers and Marker Sets</a></li>
+<li><a href="#tracking-quality">Tracking Quality</a></li>
+<li><a href="#frame-data">Frame Data Structure</a></li>
+<li><a href="#sdk-patterns">Real OptiTrack SDK Patterns</a></li>
+<li><a href="#challenges">Common Challenges</a></li>
+<li><a href="#interview-questions">Interview Questions</a></li>
+</ol>
+<hr>
+<p><a name="what-is-optitrack" href=""></a></p>
+<h2 id="1-what-is-optitrack">1. What is OptiTrack? </h2>
+<h3 id="overview">Overview </h3>
+<p><strong>OptiTrack</strong> is a motion capture system that tracks objects in 3D space using:</p>
+<ul>
+<li><strong>Infrared cameras</strong> (usually 6-12+ cameras)</li>
+<li><strong>Reflective markers</strong> (small spheres that reflect IR light)</li>
+<li><strong>Triangulation</strong> (multiple camera views → 3D position)</li>
+</ul>
+<h3 id="common-applications">Common Applications </h3>
+<ul>
+<li><strong>VR/AR:</strong> Track headsets, controllers, full body</li>
+<li><strong>Medical Research:</strong> Track surgical tools, patient movement, rehabilitation</li>
+<li><strong>Robotics:</strong> Track robot position, end-effector position</li>
+<li><strong>Animation:</strong> Motion capture for films and games</li>
+<li><strong>Sports Science:</strong> Analyze athlete biomechanics</li>
+</ul>
+<h3 id="why-optitrack-for-medical-vr">Why OptiTrack for Medical VR? </h3>
+<ul>
+<li><strong>Sub-millimeter accuracy</strong> (critical for surgery simulation)</li>
+<li><strong>Low latency</strong> (~5ms, 120+ FPS)</li>
+<li><strong>Large tracking volume</strong> (entire operating room)</li>
+<li><strong>No drift</strong> (unlike IMU-based tracking)</li>
+<li><strong>Occlusion handling</strong> (if some markers blocked, still tracks)</li>
+</ul>
+<hr>
+<p><a name="how-it-works" href=""></a></p>
+<h2 id="2-how-motion-capture-works">2. How Motion Capture Works </h2>
+<h3 id="the-hardware-setup">The Hardware Setup </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Camera Setup (typical):
+        [CAM1]                    [CAM2]
+          \                        /
+           \                      /
+            \    [Headset]       /
+             \   with markers   /
+              \                /
+               \              /
+        [CAM3]  \            /  [CAM4]
+                 \          /
+                  v        v
+               Tracking Volume
+</code></pre><p><strong>Each camera:</strong></p>
+<ul>
+<li>Emits infrared light</li>
+<li>Captures reflections from markers</li>
+<li>Sends 2D marker positions to PC</li>
+<li>Runs at 120-240 FPS</li>
+</ul>
+<p><strong>The PC:</strong></p>
+<ul>
+<li>Receives 2D marker positions from all cameras</li>
+<li>Triangulates to find 3D positions</li>
+<li>Groups markers into rigid bodies</li>
+<li>Calculates position + rotation for each rigid body</li>
+<li>Streams data to applications</li>
+</ul>
+<h3 id="the-basic-process">The Basic Process </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────┐
+│ STEP 1: Camera Capture                              │
+│ Each camera sees markers as bright 2D blobs         │
+│ CAM1: marker at pixel (452, 301)                    │
+│ CAM2: marker at pixel (198, 287)                    │
+│ CAM3: marker at pixel (523, 344)                    │
+└─────────────────────────────────────────────────────┘
+                      ↓
+┌─────────────────────────────────────────────────────┐
+│ STEP 2: Triangulation                               │
+│ Combine 2D views → 3D world position                │
+│ Marker 3D position: (1.23, 1.87, 0.45) meters       │
+└─────────────────────────────────────────────────────┘
+                      ↓
+┌─────────────────────────────────────────────────────┐
+│ STEP 3: Marker Grouping                             │
+│ "These 4 markers belong to the headset"             │
+│ "These 3 markers belong to left controller"         │
+└─────────────────────────────────────────────────────┘
+                      ↓
+┌─────────────────────────────────────────────────────┐
+│ STEP 4: Pose Estimation                             │
+│ Calculate rigid body position + rotation            │
+│ Headset: pos=(1.2, 1.8, 0.5), rot=quaternion        │
+└─────────────────────────────────────────────────────┘
+                      ↓
+┌─────────────────────────────────────────────────────┐
+│ STEP 5: Send to Application                         │
+│ VR app receives tracking data via NatNet SDK        │
+│ Updates virtual camera/objects                      │
+└─────────────────────────────────────────────────────┘
+</code></pre><h3 id="triangulation-explained">Triangulation Explained </h3>
+<p><strong>How do we get 3D from 2D?</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Side View:
+
+CAM1 sees marker         CAM2 sees marker
+at pixel (x1, y1)        at pixel (x2, y2)
+
+   CAM1                      CAM2
+     \                        /
+      \                      /
+       \    ray1        ray2/
+        \                  /
+         \                /
+          \              /
+           \            /
+            \          /
+             \        /
+              v      v
+            MARKER (3D intersection)
+</code></pre><p><strong>The math:</strong></p>
+<ul>
+<li>Each camera creates a <strong>ray</strong> from its lens through the pixel</li>
+<li>Rays from 2+ cameras intersect at the marker's 3D position</li>
+<li>More cameras = more accurate (OptiTrack uses 3+ for redundancy)</li>
+</ul>
+<p><strong>Real calculation:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// For each camera:</span>
+Ray ray <span class="token operator">=</span> camera<span class="token punctuation">.</span><span class="token function">pixelToRay</span><span class="token punctuation">(</span>pixelX<span class="token punctuation">,</span> pixelY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Find intersection of all rays (least-squares optimization)</span>
+Vec3 marker3D <span class="token operator">=</span> <span class="token function">triangulate</span><span class="token punctuation">(</span>ray1<span class="token punctuation">,</span> ray2<span class="token punctuation">,</span> ray3<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<p><a name="key-concepts" href=""></a></p>
+<h2 id="3-key-concepts">3. Key Concepts </h2>
+<h3 id="31-markers">3.1 Markers </h3>
+<p><strong>What they are:</strong></p>
+<ul>
+<li>Small reflective spheres (usually 8-14mm diameter)</li>
+<li>Covered in retro-reflective material (like road signs)</li>
+<li>Passive (no batteries, just reflect IR light)</li>
+</ul>
+<p><strong>Types:</strong></p>
+<ol>
+<li><strong>Individual markers</strong> - Tracked separately, can be anywhere</li>
+<li><strong>Rigid body markers</strong> - Fixed to an object, move together</li>
+<li><strong>Skeleton markers</strong> - Attached to body joints for full-body tracking</li>
+</ol>
+<h3 id="32-rigid-bodies">3.2 Rigid Bodies </h3>
+<p><strong>Definition:</strong> A set of markers that maintain <strong>fixed relative positions</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Headset Rigid Body:
+    M2
+    |
+M1--+--M3    &lt;- 4 markers in fixed configuration
+    |
+    M4
+
+When headset moves/rotates, all 4 markers move together
+maintaining their relative positions.
+</code></pre><p><strong>Key properties:</strong></p>
+<ul>
+<li><strong>ID:</strong> Unique identifier (e.g., headset = ID 1, controller = ID 2)</li>
+<li><strong>Position:</strong> Center point in world space (Vec3)</li>
+<li><strong>Rotation:</strong> Orientation (Quaternion or rotation matrix)</li>
+<li><strong>Marker count:</strong> How many markers define this rigid body</li>
+<li><strong>Marker offsets:</strong> Fixed local positions of each marker</li>
+</ul>
+<p><strong>Why rigid bodies?</strong></p>
+<ul>
+<li>Track complex objects with single position/rotation</li>
+<li>More robust (if 1 marker occluded, still tracks)</li>
+<li>Easier for applications (get headset pose, not 4 marker positions)</li>
+</ul>
+<h3 id="33-tracking-quality">3.3 Tracking Quality </h3>
+<p><strong>Mean Error:</strong> Average distance between:</p>
+<ul>
+<li>Where markers <strong>should be</strong> (based on calculated pose)</li>
+<li>Where markers <strong>actually are</strong> (from cameras)</li>
+</ul>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> <span class="token function">calculateMeanError</span><span class="token punctuation">(</span>RigidBody<span class="token operator">&amp;</span> rb<span class="token punctuation">,</span> Vec3 markerPositions<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> totalError <span class="token operator">=</span> <span class="token number">0.0f</span><span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rb<span class="token punctuation">.</span>numMarkers<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Where marker should be</span>
+        Vec3 expected <span class="token operator">=</span> rb<span class="token punctuation">.</span>transform<span class="token punctuation">.</span><span class="token function">transformPoint</span><span class="token punctuation">(</span>rb<span class="token punctuation">.</span>markerOffsets<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Where it actually is</span>
+        Vec3 actual <span class="token operator">=</span> markerPositions<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Distance between them</span>
+        <span class="token keyword keyword-float">float</span> error <span class="token operator">=</span> <span class="token punctuation">(</span>expected <span class="token operator">-</span> actual<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        totalError <span class="token operator">+=</span> error<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword keyword-return">return</span> totalError <span class="token operator">/</span> rb<span class="token punctuation">.</span>numMarkers<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>&lt; 0.5mm:</strong> Excellent tracking</li>
+<li><strong>0.5-1.0mm:</strong> Good tracking</li>
+<li><strong>1.0-2.0mm:</strong> Acceptable (maybe some occlusion)</li>
+<li><strong>&gt; 2.0mm:</strong> Poor (check for reflections, occlusion, calibration)</li>
+</ul>
+<h3 id="34-occlusion">3.4 Occlusion </h3>
+<p><strong>Problem:</strong> Markers can be blocked from camera view</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>    CAM1         CAM2         CAM3
+      \            |            /
+       \           |           /
+        \          |          /
+         \      [HAND]       /
+          \        X        /     &lt;- Marker blocked by hand
+           \       |       /
+            \  [Marker]  /
+             \          /
+
+CAM2 can't see marker, but CAM1 and CAM3 can!
+</code></pre><p><strong>OptiTrack's solution:</strong></p>
+<ul>
+<li>Need <strong>at least 2 cameras</strong> to see a marker for 3D reconstruction</li>
+<li>Rigid bodies can tolerate some markers being occluded</li>
+<li><strong>Minimum marker requirement:</strong> Need to see 3+ markers to track a rigid body</li>
+</ul>
+<p><strong>Tracking states:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-enum">enum</span> <span class="token class-name">TrackingState</span> <span class="token punctuation">{</span>
+    NOT_TRACKED<span class="token punctuation">,</span>        <span class="token comment">// &lt; 3 markers visible</span>
+    TRACKED_PARTIAL<span class="token punctuation">,</span>    <span class="token comment">// 3+ markers, but some occluded</span>
+    TRACKED_FULL        <span class="token comment">// All markers visible</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<p><a name="tracking-pipeline" href=""></a></p>
+<h2 id="4-the-tracking-pipeline">4. The Tracking Pipeline </h2>
+<h3 id="frame-by-frame-process">Frame-by-Frame Process </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// OptiTrack runs this every frame (120 FPS)</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">processFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. CAPTURE: Get 2D marker positions from all cameras</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>Marker2D<span class="token operator">&gt;</span> markers2D <span class="token operator">=</span> <span class="token function">captureFromCameras</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. TRIANGULATE: Convert 2D → 3D</span>
+    std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>Vec3<span class="token operator">&gt;</span> markers3D <span class="token operator">=</span> <span class="token function">triangulate</span><span class="token punctuation">(</span>markers2D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 3. IDENTIFY: Which markers belong to which rigid body?</span>
+    <span class="token function">assignMarkersToRigidBodies</span><span class="token punctuation">(</span>markers3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 4. SOLVE: Calculate position + rotation for each rigid body</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>RigidBody<span class="token operator">&amp;</span> rb <span class="token operator">:</span> rigidBodies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">solvePose</span><span class="token punctuation">(</span>rb<span class="token punctuation">,</span> markers3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 5. VALIDATE: Check tracking quality</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>RigidBody<span class="token operator">&amp;</span> rb <span class="token operator">:</span> rigidBodies<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        rb<span class="token punctuation">.</span>meanError <span class="token operator">=</span> <span class="token function">calculateMeanError</span><span class="token punctuation">(</span>rb<span class="token punctuation">,</span> markers3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rb<span class="token punctuation">.</span>isTracked <span class="token operator">=</span> <span class="token punctuation">(</span>rb<span class="token punctuation">.</span>visibleMarkers <span class="token operator">&gt;=</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 6. STREAM: Send data to applications</span>
+    <span class="token function">sendFrameData</span><span class="token punctuation">(</span>rigidBodies<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="pose-estimation-the-hard-part">Pose Estimation (The Hard Part) </h3>
+<p><strong>Problem:</strong> Given marker positions, find rigid body's position and rotation.</p>
+<p><strong>Input:</strong></p>
+<ul>
+<li>4 marker positions in world space (from triangulation)</li>
+<li>4 marker positions in local space (from rigid body definition)</li>
+</ul>
+<p><strong>Output:</strong></p>
+<ul>
+<li>Rigid body position (Vec3)</li>
+<li>Rigid body rotation (Quaternion)</li>
+</ul>
+<p><strong>Algorithm (simplified):</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Transform <span class="token function">solvePose</span><span class="token punctuation">(</span>Vec3 markersWorld<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> Vec3 markersLocal<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. Find centroid (average position)</span>
+    Vec3 centroidWorld <span class="token operator">=</span> <span class="token function">average</span><span class="token punctuation">(</span>markersWorld<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Vec3 centroidLocal <span class="token operator">=</span> <span class="token function">average</span><span class="token punctuation">(</span>markersLocal<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. Center the marker sets</span>
+    Vec3 worldCentered<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    Vec3 localCentered<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        worldCentered<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> markersWorld<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> centroidWorld<span class="token punctuation">;</span>
+        localCentered<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> markersLocal<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> centroidLocal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 3. Find rotation that best aligns local → world</span>
+    <span class="token comment">// (Uses SVD/Kabsch algorithm - complex, but standard)</span>
+    Quaternion rotation <span class="token operator">=</span> <span class="token function">findOptimalRotation</span><span class="token punctuation">(</span>localCentered<span class="token punctuation">,</span> worldCentered<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 4. Position is world centroid</span>
+    Vec3 position <span class="token operator">=</span> centroidWorld<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token function">Transform</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Real implementation:</strong> OptiTrack uses optimized algorithms like:</p>
+<ul>
+<li><strong>Kabsch algorithm</strong> (SVD-based)</li>
+<li><strong>RANSAC</strong> (handles outliers)</li>
+<li><strong>Iterative refinement</strong> (improves accuracy)</li>
+</ul>
+<hr>
+<p><a name="rigid-bodies" href=""></a></p>
+<h2 id="5-rigid-bodies">5. Rigid Bodies </h2>
+<h3 id="creating-a-rigid-body">Creating a Rigid Body </h3>
+<p><strong>In Motive (OptiTrack software):</strong></p>
+<ol>
+<li>Place object with markers in tracking volume</li>
+<li>Select all markers belonging to object</li>
+<li>Click "Create Rigid Body"</li>
+<li>Motive records marker offsets automatically</li>
+<li>Export rigid body definition</li>
+</ol>
+<p><strong>The definition file contains:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Rigid Body ID: 1
+Name: "Headset"
+Marker Count: 4
+Marker Offsets (local space):
+  Marker 0: (0.05, 0.03, 0.02)
+  Marker 1: (-0.05, 0.03, 0.02)
+  Marker 2: (0.05, 0.03, -0.02)
+  Marker 3: (-0.05, 0.03, -0.02)
+</code></pre><h3 id="rigid-body-constraints">Rigid Body Constraints </h3>
+<p><strong>What makes it "rigid"?</strong></p>
+<ul>
+<li>Marker distances <strong>never change</strong></li>
+<li>Markers only move together through <strong>rotation + translation</strong></li>
+<li>No bending, stretching, or deformation</li>
+</ul>
+<p><strong>Validation:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-bool">bool</span> <span class="token function">validateRigidBody</span><span class="token punctuation">(</span>Vec3 markerOffsets<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Calculate all pairwise distances</span>
+    <span class="token keyword keyword-float">float</span> distances<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            distances<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>markerOffsets<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> markerOffsets<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Later, check if distances are maintained</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-float">float</span> currentDist <span class="token operator">=</span> <span class="token punctuation">(</span>currentMarkers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> currentMarkers<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-float">float</span> expectedDist <span class="token operator">=</span> distances<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword keyword-float">float</span> error <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span>currentDist <span class="token operator">-</span> expectedDist<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>error <span class="token operator">&gt;</span> <span class="token number">2.0f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 2mm tolerance</span>
+                <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>  <span class="token comment">// Not rigid!</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="multi-rigid-body-tracking">Multi-Rigid-Body Tracking </h3>
+<p><strong>Typical VR setup:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>RigidBody headset<span class="token punctuation">;</span>      <span class="token comment">// ID 1, 4 markers</span>
+RigidBody leftHand<span class="token punctuation">;</span>     <span class="token comment">// ID 2, 3 markers</span>
+RigidBody rightHand<span class="token punctuation">;</span>    <span class="token comment">// ID 3, 3 markers</span>
+RigidBody tracker1<span class="token punctuation">;</span>     <span class="token comment">// ID 4, 3 markers (foot/hip)</span>
+</code></pre><p><strong>Challenge:</strong> Identifying which markers belong to which rigid body</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Frame has 13 markers total detected.
+Which 4 belong to headset?
+Which 3 belong to left hand?
+...
+</code></pre><p><strong>OptiTrack's approach:</strong></p>
+<ol>
+<li><strong>Pattern matching:</strong> Unique marker configurations</li>
+<li><strong>Proximity:</strong> Markers close together likely belong to same object</li>
+<li><strong>Temporal coherence:</strong> Track frame-to-frame (headset can't teleport)</li>
+<li><strong>Unique marker sizes:</strong> Different sized markers for different objects</li>
+</ol>
+<hr>
+<p><a name="markers" href=""></a></p>
+<h2 id="6-markers-and-marker-sets">6. Markers and Marker Sets </h2>
+<h3 id="marker-states">Marker States </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-enum">enum</span> <span class="token class-name">MarkerState</span> <span class="token punctuation">{</span>
+    UNIDENTIFIED<span class="token punctuation">,</span>    <span class="token comment">// Seen, but don't know which rigid body</span>
+    IDENTIFIED<span class="token punctuation">,</span>      <span class="token comment">// Assigned to a rigid body</span>
+    OCCLUDED<span class="token punctuation">,</span>        <span class="token comment">// Should exist but not visible</span>
+    PREDICTED        <span class="token comment">// Position estimated from previous frames</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><h3 id="active-markers-vs-passive-markers">Active Markers vs Passive Markers </h3>
+<p><strong>Passive (OptiTrack standard):</strong></p>
+<ul>
+<li>Just reflective spheres</li>
+<li>No electronics</li>
+<li>Cheap, lightweight</li>
+<li>Can't be individually identified</li>
+<li>Need unique spatial patterns</li>
+</ul>
+<p><strong>Active (some systems):</strong></p>
+<ul>
+<li>LED-based markers</li>
+<li>Each has unique ID</li>
+<li>More expensive, heavier</li>
+<li>Need batteries</li>
+<li>Easier to identify</li>
+</ul>
+<h3 id="marker-labeling">Marker Labeling </h3>
+<p><strong>The problem:</strong> Frame has 13 markers. Which is which?</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Frame N:
+Marker A at (1.2, 1.8, 0.5)
+Marker B at (1.15, 1.83, 0.52)
+Marker C at (1.25, 1.83, 0.48)
+Marker D at (1.2, 1.77, 0.5)
+...
+
+Which is headset marker 0?
+Which is headset marker 1?
+</code></pre><p><strong>Solution: Pattern matching</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Check if 4 markers match headset's expected pattern</span>
+<span class="token keyword keyword-bool">bool</span> <span class="token function">matchesHeadsetPattern</span><span class="token punctuation">(</span>Vec3 markers<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Calculate distances between all pairs</span>
+    <span class="token keyword keyword-float">float</span> d01 <span class="token operator">=</span> <span class="token punctuation">(</span>markers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> markers<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> d02 <span class="token operator">=</span> <span class="token punctuation">(</span>markers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> markers<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> d03 <span class="token operator">=</span> <span class="token punctuation">(</span>markers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> markers<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ... etc</span>
+
+    <span class="token comment">// Compare to expected distances from rigid body definition</span>
+    <span class="token keyword keyword-float">float</span> expectedD01 <span class="token operator">=</span> <span class="token number">0.10f</span><span class="token punctuation">;</span>  <span class="token comment">// 10cm between markers 0 and 1</span>
+    <span class="token keyword keyword-float">float</span> expectedD02 <span class="token operator">=</span> <span class="token number">0.05f</span><span class="token punctuation">;</span>  <span class="token comment">// 5cm between markers 0 and 2</span>
+    <span class="token comment">// ... etc</span>
+
+    <span class="token keyword keyword-float">float</span> tolerance <span class="token operator">=</span> <span class="token number">0.002f</span><span class="token punctuation">;</span>  <span class="token comment">// 2mm</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>d01 <span class="token operator">-</span> expectedD01<span class="token punctuation">)</span> <span class="token operator">&gt;</span> tolerance<span class="token punctuation">)</span> <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>d02 <span class="token operator">-</span> expectedD02<span class="token punctuation">)</span> <span class="token operator">&gt;</span> tolerance<span class="token punctuation">)</span> <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token comment">// ... check all pairs</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="marker-prediction">Marker Prediction </h3>
+<p><strong>When markers are temporarily occluded:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">predictMarkerPosition</span><span class="token punctuation">(</span>Marker<span class="token operator">&amp;</span> marker<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> deltaTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Use velocity to estimate position</span>
+    Vec3 velocity <span class="token operator">=</span> marker<span class="token punctuation">.</span>velocity<span class="token punctuation">;</span>  <span class="token comment">// From previous frames</span>
+    Vec3 predicted <span class="token operator">=</span> marker<span class="token punctuation">.</span>lastPosition <span class="token operator">+</span> <span class="token punctuation">(</span>velocity <span class="token operator">*</span> deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    marker<span class="token punctuation">.</span>state <span class="token operator">=</span> PREDICTED<span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> predicted<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Limits:</strong></p>
+<ul>
+<li>Only predict for 2-3 frames</li>
+<li>After that, mark rigid body as "not tracked"</li>
+<li>Prevents drift from accumulating</li>
+</ul>
+<hr>
+<p><a name="tracking-quality" href=""></a></p>
+<h2 id="7-tracking-quality">7. Tracking Quality </h2>
+<h3 id="metrics">Metrics </h3>
+<p><strong>1. Mean Marker Error</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> meanError<span class="token punctuation">;</span>  <span class="token comment">// Average distance between expected and actual marker positions</span>
+</code></pre><ul>
+<li><strong>Best case:</strong> &lt; 0.2mm (ideal conditions)</li>
+<li><strong>Typical:</strong> 0.5-1.0mm (good tracking)</li>
+<li><strong>Problematic:</strong> &gt; 2.0mm (check setup)</li>
+</ul>
+<p><strong>2. Marker Visibility</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-int">int</span> visibleMarkers<span class="token punctuation">;</span>  <span class="token comment">// How many markers currently visible</span>
+<span class="token keyword keyword-int">int</span> totalMarkers<span class="token punctuation">;</span>    <span class="token comment">// Total markers in rigid body</span>
+<span class="token keyword keyword-float">float</span> visibilityRatio <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-float">float</span><span class="token punctuation">)</span>visibleMarkers <span class="token operator">/</span> totalMarkers<span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>100%:</strong> All markers visible</li>
+<li><strong>75-99%:</strong> Partial occlusion, still tracking</li>
+<li><strong>&lt; 50%:</strong> May lose tracking</li>
+</ul>
+<p><strong>3. Frame Rate</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> fps<span class="token punctuation">;</span>  <span class="token comment">// Actual frames per second</span>
+</code></pre><ul>
+<li><strong>120 FPS:</strong> Standard for VR</li>
+<li><strong>240 FPS:</strong> High-speed applications</li>
+<li><strong>&lt; 100 FPS:</strong> System overloaded</li>
+</ul>
+<p><strong>4. Latency</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> latency<span class="token punctuation">;</span>  <span class="token comment">// Time from capture to application (milliseconds)</span>
+</code></pre><ul>
+<li><strong>&lt; 5ms:</strong> Excellent (VR standard)</li>
+<li><strong>5-10ms:</strong> Acceptable</li>
+<li><strong>&gt; 10ms:</strong> Noticeable lag (check network/CPU)</li>
+</ul>
+<h3 id="common-tracking-issues">Common Tracking Issues </h3>
+<p><strong>Issue 1: High Mean Error</strong></p>
+<ul>
+<li><strong>Cause:</strong> Poor calibration, reflections, marker swap</li>
+<li><strong>Solution:</strong> Recalibrate cameras, check for reflective surfaces</li>
+</ul>
+<p><strong>Issue 2: Marker Occlusion</strong></p>
+<ul>
+<li><strong>Cause:</strong> Body/object blocking line of sight</li>
+<li><strong>Solution:</strong> Add more cameras, reposition cameras, add more markers</li>
+</ul>
+<p><strong>Issue 3: Jitter (shaky tracking)</strong></p>
+<ul>
+<li><strong>Cause:</strong> Marker reflections, camera noise, insufficient markers</li>
+<li><strong>Solution:</strong> Smooth with filters, check marker quality, add markers</li>
+</ul>
+<p><strong>Issue 4: ID Swapping</strong></p>
+<ul>
+<li><strong>Cause:</strong> Similar rigid bodies, markers too close, poor patterns</li>
+<li><strong>Solution:</strong> Use unique marker configurations, increase marker spacing</li>
+</ul>
+<h3 id="tracking-quality-in-code">Tracking Quality in Code </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-class">class</span> <span class="token class-name">RigidBody</span> <span class="token punctuation">{</span>
+<span class="token keyword keyword-public">public</span><span class="token operator">:</span>
+    <span class="token keyword keyword-float">float</span> meanError<span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> visibleMarkers<span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> totalMarkers<span class="token punctuation">;</span>
+
+    TrackingQuality <span class="token function">getQuality</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>visibleMarkers <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> NOT_TRACKED<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword keyword-float">float</span> visibilityRatio <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-float">float</span><span class="token punctuation">)</span>visibleMarkers <span class="token operator">/</span> totalMarkers<span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>visibilityRatio <span class="token operator">==</span> <span class="token number">1.0f</span> <span class="token operator">&amp;&amp;</span> meanError <span class="token operator">&lt;</span> <span class="token number">0.5f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> EXCELLENT<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>visibilityRatio <span class="token operator">&gt;=</span> <span class="token number">0.75f</span> <span class="token operator">&amp;&amp;</span> meanError <span class="token operator">&lt;</span> <span class="token number">1.0f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> GOOD<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>visibleMarkers <span class="token operator">&gt;=</span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> meanError <span class="token operator">&lt;</span> <span class="token number">2.0f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> ACCEPTABLE<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> POOR<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<p><a name="frame-data" href=""></a></p>
+<h2 id="8-frame-data-structure">8. Frame Data Structure </h2>
+<h3 id="what-you-receive-each-frame">What You Receive Each Frame </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">Frame</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> frameNumber<span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> timestamp<span class="token punctuation">;</span>
+
+    <span class="token comment">// All markers detected (before grouping)</span>
+    <span class="token keyword keyword-int">int</span> numUnidentifiedMarkers<span class="token punctuation">;</span>
+    Vec3 unidentifiedMarkers<span class="token punctuation">[</span>MAX_MARKERS<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Rigid bodies</span>
+    <span class="token keyword keyword-int">int</span> numRigidBodies<span class="token punctuation">;</span>
+    RigidBodyData rigidBodies<span class="token punctuation">[</span>MAX_RIGID_BODIES<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Latency info</span>
+    <span class="token keyword keyword-float">float</span> latency<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-struct">struct</span> <span class="token class-name">RigidBodyData</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-int">int</span> id<span class="token punctuation">;</span>
+    Vec3 position<span class="token punctuation">;</span>
+    Quaternion rotation<span class="token punctuation">;</span>
+
+    <span class="token comment">// Individual markers</span>
+    <span class="token keyword keyword-int">int</span> numMarkers<span class="token punctuation">;</span>
+    Vec3 markerPositions<span class="token punctuation">[</span>MAX_MARKERS_PER_BODY<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-int">int</span> markerIDs<span class="token punctuation">[</span>MAX_MARKERS_PER_BODY<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> markerSizes<span class="token punctuation">[</span>MAX_MARKERS_PER_BODY<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Quality metrics</span>
+    <span class="token keyword keyword-float">float</span> meanError<span class="token punctuation">;</span>
+    <span class="token keyword keyword-bool">bool</span> isTracked<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><h3 id="frame-processing-example">Frame Processing Example </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-void">void</span> <span class="token function">onFrameReceived</span><span class="token punctuation">(</span>Frame<span class="token operator">&amp;</span> frame<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Frame "</span> <span class="token operator">&lt;&lt;</span> frame<span class="token punctuation">.</span>frameNumber
+              <span class="token operator">&lt;&lt;</span> <span class="token string">" at "</span> <span class="token operator">&lt;&lt;</span> frame<span class="token punctuation">.</span>timestamp <span class="token operator">&lt;&lt;</span> <span class="token string">"s"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+    <span class="token comment">// Process headset</span>
+    RigidBodyData<span class="token operator">*</span> headset <span class="token operator">=</span> <span class="token function">findRigidBody</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> HEADSET_ID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>headset <span class="token operator">&amp;&amp;</span> headset<span class="token operator">-&gt;</span>isTracked<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">updateVRCamera</span><span class="token punctuation">(</span>headset<span class="token operator">-&gt;</span>position<span class="token punctuation">,</span> headset<span class="token operator">-&gt;</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>headset<span class="token operator">-&gt;</span>meanError <span class="token operator">&gt;</span> <span class="token number">1.0f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"WARNING: High tracking error on headset: "</span>
+                      <span class="token operator">&lt;&lt;</span> headset<span class="token operator">-&gt;</span>meanError <span class="token operator">&lt;&lt;</span> <span class="token string">"mm"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+        std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"LOST TRACKING: Headset not visible"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+        <span class="token function">showTrackingLostMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Process controllers</span>
+    RigidBodyData<span class="token operator">*</span> leftController <span class="token operator">=</span> <span class="token function">findRigidBody</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> LEFT_CONTROLLER_ID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>leftController <span class="token operator">&amp;&amp;</span> leftController<span class="token operator">-&gt;</span>isTracked<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">updateControllerVisual</span><span class="token punctuation">(</span>leftController<span class="token operator">-&gt;</span>position<span class="token punctuation">,</span> leftController<span class="token operator">-&gt;</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<p><a name="sdk-patterns" href=""></a></p>
+<h2 id="9-real-optitrack-sdk-patterns">9. Real OptiTrack SDK Patterns </h2>
+<h3 id="natnet-sdk-basics">NatNet SDK Basics </h3>
+<p><strong>NatNet</strong> is OptiTrack's networking protocol for streaming tracking data.</p>
+<p><strong>Connection setup:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;NatNetTypes.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;NatNetClient.h&gt;</span></span>
+
+NatNetClient<span class="token operator">*</span> client <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token function">NatNetClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Connect to Motive (OptiTrack software)</span>
+client<span class="token operator">-&gt;</span><span class="token function">Connect</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">1510</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Local connection</span>
+
+<span class="token comment">// Set frame callback</span>
+client<span class="token operator">-&gt;</span><span class="token function">SetFrameReceivedCallback</span><span class="token punctuation">(</span>onFrameReceived<span class="token punctuation">,</span> <span class="token keyword keyword-nullptr">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Frame callback:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-void">void</span> <span class="token function">onFrameReceived</span><span class="token punctuation">(</span>sFrameOfMocapData<span class="token operator">*</span> data<span class="token punctuation">,</span> <span class="token keyword keyword-void">void</span><span class="token operator">*</span> pUserData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Access rigid bodies</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> data<span class="token operator">-&gt;</span>nRigidBodies<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sRigidBodyData rb <span class="token operator">=</span> data<span class="token operator">-&gt;</span>RigidBodies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Position</span>
+        Vec3 pos <span class="token operator">=</span> <span class="token punctuation">{</span>rb<span class="token punctuation">.</span>x<span class="token punctuation">,</span> rb<span class="token punctuation">.</span>y<span class="token punctuation">,</span> rb<span class="token punctuation">.</span>z<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Rotation (quaternion)</span>
+        Quaternion rot <span class="token operator">=</span> <span class="token punctuation">{</span>rb<span class="token punctuation">.</span>qx<span class="token punctuation">,</span> rb<span class="token punctuation">.</span>qy<span class="token punctuation">,</span> rb<span class="token punctuation">.</span>qz<span class="token punctuation">,</span> rb<span class="token punctuation">.</span>qw<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Tracking info</span>
+        <span class="token keyword keyword-bool">bool</span> tracked <span class="token operator">=</span> rb<span class="token punctuation">.</span>params <span class="token operator">&amp;</span> <span class="token number">0x01</span><span class="token punctuation">;</span>  <span class="token comment">// Bit flag</span>
+        <span class="token keyword keyword-float">float</span> error <span class="token operator">=</span> rb<span class="token punctuation">.</span>MeanError<span class="token punctuation">;</span>
+
+        <span class="token comment">// Use transform</span>
+        <span class="token function">updateRigidBody</span><span class="token punctuation">(</span>rb<span class="token punctuation">.</span>ID<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> rot<span class="token punctuation">,</span> tracked<span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="common-sdk-operations">Common SDK Operations </h3>
+<p><strong>1. Get rigid body by ID:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>sRigidBodyData<span class="token operator">*</span> <span class="token function">getRigidBody</span><span class="token punctuation">(</span>sFrameOfMocapData<span class="token operator">*</span> frame<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> frame<span class="token operator">-&gt;</span>nRigidBodies<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>frame<span class="token operator">-&gt;</span>RigidBodies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>ID <span class="token operator">==</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword keyword-return">return</span> <span class="token operator">&amp;</span>frame<span class="token operator">-&gt;</span>RigidBodies<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-return">return</span> <span class="token keyword keyword-nullptr">nullptr</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>2. Transform marker to world space:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">getMarkerWorldPosition</span><span class="token punctuation">(</span>sRigidBodyData<span class="token operator">*</span> rb<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> markerIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Rigid body transform</span>
+    Transform <span class="token function">rbTransform</span><span class="token punctuation">(</span>
+        Vec3<span class="token punctuation">{</span>rb<span class="token operator">-&gt;</span>x<span class="token punctuation">,</span> rb<span class="token operator">-&gt;</span>y<span class="token punctuation">,</span> rb<span class="token operator">-&gt;</span>z<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        Quaternion<span class="token punctuation">{</span>rb<span class="token operator">-&gt;</span>qx<span class="token punctuation">,</span> rb<span class="token operator">-&gt;</span>qy<span class="token punctuation">,</span> rb<span class="token operator">-&gt;</span>qz<span class="token punctuation">,</span> rb<span class="token operator">-&gt;</span>qw<span class="token punctuation">}</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Marker local offset (from rigid body definition)</span>
+    Vec3 markerLocal <span class="token operator">=</span> rigidBodyDefinitions<span class="token punctuation">[</span>rb<span class="token operator">-&gt;</span>ID<span class="token punctuation">]</span><span class="token punctuation">.</span>markerOffsets<span class="token punctuation">[</span>markerIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Transform to world space</span>
+    <span class="token keyword keyword-return">return</span> rbTransform<span class="token punctuation">.</span><span class="token function">transformPoint</span><span class="token punctuation">(</span>markerLocal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>3. Check tracking quality:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-bool">bool</span> <span class="token function">isTrackingGood</span><span class="token punctuation">(</span>sRigidBodyData<span class="token operator">*</span> rb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-bool">bool</span> tracked <span class="token operator">=</span> rb<span class="token operator">-&gt;</span>params <span class="token operator">&amp;</span> <span class="token number">0x01</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> error <span class="token operator">=</span> rb<span class="token operator">-&gt;</span>MeanError<span class="token punctuation">;</span>
+
+    <span class="token keyword keyword-return">return</span> tracked <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>error <span class="token operator">&lt;</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &lt; 1mm error</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="coordinate-system">Coordinate System </h3>
+<p><strong>OptiTrack coordinate system (right-handed):</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Y (up)
+|
+|
++------ X (right)
+/
+/
+Z (forward, toward you)
+</code></pre><p><strong>Important:</strong> Some engines use different conventions:</p>
+<ul>
+<li><strong>Unity:</strong> Y-up, Z-forward, <strong>left-handed</strong></li>
+<li><strong>Unreal:</strong> Z-up, X-forward, <strong>left-handed</strong></li>
+<li><strong>OpenGL:</strong> Y-up, -Z-forward, <strong>right-handed</strong></li>
+</ul>
+<p><strong>Conversion example (OptiTrack → Unity):</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">optitrackToUnity</span><span class="token punctuation">(</span>Vec3 optitrack<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>
+        optitrack<span class="token punctuation">.</span>x<span class="token punctuation">,</span>   <span class="token comment">// X → X</span>
+        optitrack<span class="token punctuation">.</span>y<span class="token punctuation">,</span>   <span class="token comment">// Y → Y</span>
+        <span class="token operator">-</span>optitrack<span class="token punctuation">.</span>z   <span class="token comment">// Z → -Z (flip for left-handed)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Quaternion <span class="token function">optitrackToUnity</span><span class="token punctuation">(</span>Quaternion optitrack<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">-</span>optitrack<span class="token punctuation">.</span>x<span class="token punctuation">,</span>
+        <span class="token operator">-</span>optitrack<span class="token punctuation">.</span>y<span class="token punctuation">,</span>
+        optitrack<span class="token punctuation">.</span>z<span class="token punctuation">,</span>
+        optitrack<span class="token punctuation">.</span>w
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<p><a name="challenges" href=""></a></p>
+<h2 id="10-common-challenges">10. Common Challenges </h2>
+<h3 id="challenge-1-marker-identification">Challenge 1: Marker Identification </h3>
+<p><strong>Problem:</strong> Which marker is which?</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Asymmetric patterns:</strong> Make marker configurations unique</li>
+<li><strong>Temporal tracking:</strong> Track frame-to-frame continuity</li>
+<li><strong>Active markers:</strong> Use LEDs with IDs (expensive)</li>
+</ul>
+<h3 id="challenge-2-occlusion">Challenge 2: Occlusion </h3>
+<p><strong>Problem:</strong> Markers blocked from camera view</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>More cameras:</strong> 360° coverage</li>
+<li><strong>More markers:</strong> Redundancy</li>
+<li><strong>Prediction:</strong> Estimate position for 2-3 frames</li>
+<li><strong>Skeleton constraints:</strong> Use biomechanical limits</li>
+</ul>
+<h3 id="challenge-3-reflections">Challenge 3: Reflections </h3>
+<p><strong>Problem:</strong> Shiny surfaces create false markers</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Cover reflective surfaces:</strong> Matte paint, cloth</li>
+<li><strong>Camera masking:</strong> Ignore specific regions</li>
+<li><strong>Marker size filtering:</strong> Real markers have consistent size</li>
+<li><strong>Calibration wands:</strong> Define expected marker sizes</li>
+</ul>
+<h3 id="challenge-4-calibration-drift">Challenge 4: Calibration Drift </h3>
+<p><strong>Problem:</strong> Camera positions shift slightly over time</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Regular recalibration:</strong> Daily or weekly</li>
+<li><strong>Continuous calibration:</strong> Use fixed reference markers</li>
+<li><strong>Temperature compensation:</strong> Cameras expand/contract with heat</li>
+<li><strong>Rigid mounting:</strong> Secure cameras to structure</li>
+</ul>
+<h3 id="challenge-5-latency">Challenge 5: Latency </h3>
+<p><strong>Problem:</strong> Data arrives late, causing VR lag</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li><strong>Wired connection:</strong> Ethernet faster than WiFi</li>
+<li><strong>Prediction:</strong> Extrapolate position based on velocity</li>
+<li><strong>Optimize pipeline:</strong> Reduce processing overhead</li>
+<li><strong>Direct mode:</strong> Bypass Windows compositor</li>
+</ul>
+<hr>
+<p><a name="interview-questions" href=""></a></p>
+<h2 id="11-common-interview-questions">11. Common Interview Questions </h2>
+<h3 id="conceptual-questions">Conceptual Questions </h3>
+<p><strong>Q: How does OptiTrack determine a rigid body's position and rotation?</strong></p>
+<p>A: OptiTrack uses triangulation to find 3D positions of markers, then uses a pose estimation algorithm (like Kabsch/SVD) to find the rotation and translation that best maps the rigid body's known local marker positions to the observed world marker positions.</p>
+<p><strong>Q: What's the minimum number of markers needed to track a rigid body?</strong></p>
+<p>A: <strong>3 markers minimum</strong> for tracking, but 4+ recommended for robustness. With 3 points, you can uniquely determine position and rotation. Fewer than 3 is insufficient (2 points have rotational ambiguity around their axis).</p>
+<p><strong>Q: Why use infrared instead of visible light?</strong></p>
+<p>A: Infrared is invisible to humans (doesn't distract users), works in various lighting conditions, has less interference from ambient light, and reflective markers are highly efficient in IR spectrum.</p>
+<p><strong>Q: What causes marker ID swapping?</strong></p>
+<p>A: When rigid bodies have similar marker patterns, pass very close to each other, or when tracking is lost and reacquired. Solution: use asymmetric marker patterns and sufficient marker spacing.</p>
+<p><strong>Q: How does OptiTrack handle partial occlusion?</strong></p>
+<p>A: As long as <strong>3+ markers remain visible</strong>, OptiTrack can still track the rigid body. It uses the visible markers to estimate pose. If fewer than 3 are visible, tracking is lost and position may be predicted for 2-3 frames.</p>
+<h3 id="technical-questions">Technical Questions </h3>
+<p><strong>Q: How would you detect if tracking quality is degrading?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-bool">bool</span> <span class="token function">isTrackingDegrading</span><span class="token punctuation">(</span>RigidBody<span class="token operator">&amp;</span> rb<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> previousError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Check mean error trend</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>rb<span class="token punctuation">.</span>meanError <span class="token operator">&gt;</span> previousError <span class="token operator">*</span> <span class="token number">1.5f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>  <span class="token comment">// Error increasing</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Check marker visibility</span>
+    <span class="token keyword keyword-float">float</span> visibilityRatio <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-float">float</span><span class="token punctuation">)</span>rb<span class="token punctuation">.</span>visibleMarkers <span class="token operator">/</span> rb<span class="token punctuation">.</span>totalMarkers<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>visibilityRatio <span class="token operator">&lt;</span> <span class="token number">0.75f</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>  <span class="token comment">// Losing markers</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Q: How would you smooth jittery tracking data?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Low-pass filter (exponential smoothing)</span>
+Vec3 smoothedPos <span class="token operator">=</span> Vec3<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> smoothingFactor <span class="token operator">=</span> <span class="token number">0.3f</span><span class="token punctuation">;</span>  <span class="token comment">// 0 = no smoothing, 1 = raw data</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">updatePosition</span><span class="token punctuation">(</span>Vec3 newPos<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    smoothedPos <span class="token operator">=</span> smoothedPos <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">1.0f</span> <span class="token operator">-</span> smoothingFactor<span class="token punctuation">)</span>
+                <span class="token operator">+</span> newPos <span class="token operator">*</span> smoothingFactor<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Q: How do you convert marker positions to rigid body pose?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Transform <span class="token function">solvePose</span><span class="token punctuation">(</span>Vec3 markersWorld<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> Vec3 markersLocal<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. Find centroids</span>
+    Vec3 centroidWorld <span class="token operator">=</span> <span class="token function">computeCentroid</span><span class="token punctuation">(</span>markersWorld<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Vec3 centroidLocal <span class="token operator">=</span> <span class="token function">computeCentroid</span><span class="token punctuation">(</span>markersLocal<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. Center markers</span>
+    Vec3 worldCentered<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    Vec3 localCentered<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        worldCentered<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> markersWorld<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> centroidWorld<span class="token punctuation">;</span>
+        localCentered<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> markersLocal<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> centroidLocal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 3. Find optimal rotation (Kabsch algorithm)</span>
+    Quaternion rotation <span class="token operator">=</span> <span class="token function">findOptimalRotation</span><span class="token punctuation">(</span>localCentered<span class="token punctuation">,</span> worldCentered<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 4. Position is world centroid</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">Transform</span><span class="token punctuation">(</span>centroidWorld<span class="token punctuation">,</span> rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="practical-questions">Practical Questions </h3>
+<p><strong>Q: In a medical VR application, how would you handle tracking loss of a surgical tool?</strong></p>
+<p>A:</p>
+<ol>
+<li><strong>Detect loss:</strong> Check <code>isTracked</code> flag and <code>visibleMarkers &lt; 3</code></li>
+<li><strong>Predict briefly:</strong> Use last known velocity to estimate position for 1-2 frames</li>
+<li><strong>Alert user:</strong> Visual/audio warning that tool is not tracked</li>
+<li><strong>Freeze tool:</strong> Don't allow virtual tool to move unpredictably</li>
+<li><strong>Log event:</strong> Record tracking loss for quality analysis</li>
+<li><strong>Recovery:</strong> When tracking resumes, validate position hasn't jumped significantly</li>
+</ol>
+<p><strong>Q: How would you set up OptiTrack for a surgical training scenario?</strong></p>
+<p>A:</p>
+<ol>
+<li><strong>Coverage:</strong> 6-8 cameras for 360° coverage of workspace</li>
+<li><strong>Rigid bodies:</strong>
+<ul>
+<li>Headset (4-5 markers)</li>
+<li>Each surgical tool (3-4 markers)</li>
+<li>Patient tracker (3-4 markers)</li>
+</ul>
+</li>
+<li><strong>Calibration:</strong> Sub-millimeter accuracy required for surgery</li>
+<li><strong>Frequency:</strong> 120 FPS minimum for smooth VR</li>
+<li><strong>Validation:</strong> Test occlusion scenarios (hands blocking tools)</li>
+<li><strong>Backup:</strong> Consider IMU fusion for temporary occlusion</li>
+</ol>
+<p><strong>Q: What's the difference between world space and local space in motion tracking?</strong></p>
+<p>A:</p>
+<ul>
+<li><strong>World space:</strong> Fixed global coordinate system (the room)</li>
+<li><strong>Local space:</strong> Relative to an object's center and rotation</li>
+</ul>
+<p>Example:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Marker is 5cm to the right of headset center (local space)</span>
+Vec3 markerLocal <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.05f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Headset is at (2, 1.5, 3) and rotated 90° around Y</span>
+Transform <span class="token function">headset</span><span class="token punctuation">(</span>Vec3<span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1.5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token function">Quaternion</span><span class="token punctuation">(</span>Vec3<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> M_PI<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Where is the marker in the room? (world space)</span>
+Vec3 markerWorld <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">transformPoint</span><span class="token punctuation">(</span>markerLocal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Result: (2.0, 1.5, 2.95) - rotated and translated</span>
+</code></pre><hr>
+<h2 id="quick-reference">Quick Reference </h2>
+<h3 id="key-formulas">Key Formulas </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Centroid</span>
+Vec3 centroid <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>positions<span class="token punctuation">)</span> <span class="token operator">/</span> count<span class="token punctuation">;</span>
+
+<span class="token comment">// Mean error</span>
+<span class="token keyword keyword-float">float</span> meanError <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>distances<span class="token punctuation">)</span> <span class="token operator">/</span> count<span class="token punctuation">;</span>
+
+<span class="token comment">// Visibility ratio</span>
+<span class="token keyword keyword-float">float</span> visibility <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-float">float</span><span class="token punctuation">)</span>visibleMarkers <span class="token operator">/</span> totalMarkers<span class="token punctuation">;</span>
+
+<span class="token comment">// Transform point (local → world)</span>
+Vec3 worldPos <span class="token operator">=</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>localPos<span class="token punctuation">)</span> <span class="token operator">+</span> position<span class="token punctuation">;</span>
+</code></pre><h3 id="tracking-thresholds">Tracking Thresholds </h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Excellent</th>
+<th>Good</th>
+<th>Acceptable</th>
+<th>Poor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean Error</td>
+<td>&lt; 0.5mm</td>
+<td>0.5-1.0mm</td>
+<td>1.0-2.0mm</td>
+<td>&gt; 2.0mm</td>
+</tr>
+<tr>
+<td>Visibility</td>
+<td>100%</td>
+<td>75-99%</td>
+<td>50-74%</td>
+<td>&lt; 50%</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>&lt; 5ms</td>
+<td>5-10ms</td>
+<td>10-20ms</td>
+<td>&gt; 20ms</td>
+</tr>
+<tr>
+<td>FPS</td>
+<td>120+</td>
+<td>100-120</td>
+<td>60-100</td>
+<td>&lt; 60</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rigid-body-states">Rigid Body States </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>NOT_TRACKED     <span class="token comment">// &lt; 3 markers visible</span>
+TRACKED_PARTIAL <span class="token comment">// 3+ markers, some occluded</span>
+TRACKED_FULL    <span class="token comment">// All markers visible</span>
+</code></pre><hr>
+<h2 id="key-takeaways">Key Takeaways </h2>
+<p>✓ <strong>OptiTrack uses triangulation</strong> to convert 2D camera views → 3D marker positions</p>
+<p>✓ <strong>Rigid bodies</strong> are sets of markers with fixed relative positions</p>
+<p>✓ <strong>Minimum 3 markers</strong> needed to track a rigid body</p>
+<p>✓ <strong>Pose estimation</strong> finds position + rotation from marker positions</p>
+<p>✓ <strong>Mean error</strong> measures tracking accuracy (&lt; 1mm is good)</p>
+<p>✓ <strong>Occlusion handling</strong> allows tracking with partial marker visibility</p>
+<p>✓ <strong>120 FPS</strong> is standard for VR applications</p>
+<p>✓ <strong>NatNet SDK</strong> streams data to applications via network</p>
+<p><strong>You're now ready to implement an OptiTrack simulation!</strong> 🚀</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
