@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Crash Course - Study Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .session-list {
+            list-style: none;
+        }
+        .session-item {
+            margin-bottom: 15px;
+        }
+        .session-link {
+            display: block;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .session-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .session-number {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .session-title {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 C++ Crash Course</h1>
+        <p class="subtitle">OptiTrack & VR Interview Preparation</p>
+
+        <ul class="session-list">
+            <li class="session-item">
+                <a href="session1_notes.html" class="session-link">
+                    <div class="session-number">Session 1</div>
+                    <div class="session-title">C++ Essentials</div>
+                </a>
+            </li>
+            <li class="session-item">
+                <a href="session2_notes.html" class="session-link">
+                    <div class="session-number">Session 2</div>
+                    <div class="session-title">OOP Basics</div>
+                </a>
+            </li>
+            <li class="session-item">
+                <a href="session3_notes.html" class="session-link">
+                    <div class="session-number">Session 3</div>
+                    <div class="session-title">Motion Tracking Fundamentals</div>
+                </a>
+            </li>
+            <li class="session-item">
+                <a href="session4_notes.html" class="session-link">
+                    <div class="session-number">Session 4</div>
+                    <div class="session-title">OptiTrack Simulation</div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="footer">
+            <p>📱 Works on desktop, tablet, and mobile</p>
+            <p><a href="https://github.com/okhan93/cpp_crashcourse" target="_blank">View on GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
