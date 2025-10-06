@@ -1,0 +1,524 @@
+<!DOCTYPE html><html><head>
+      <title>session3_notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/omarkhan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.19/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="session-3-motion-tracking-fundamentals---study-notes">Session 3: Motion Tracking Fundamentals - Study Notes </h1>
+<h2 id="table-of-contents">Table of Contents </h2>
+<ol>
+<li><a href="#why-this-matters">Why This Matters for OptiTrack/VR</a></li>
+<li><a href="#coordinate-systems">3D Coordinate Systems</a></li>
+<li><a href="#vectors">Vectors - The Foundation</a></li>
+<li><a href="#vector-operations">Vector Operations</a></li>
+<li><a href="#quaternions">Quaternions - The Right Way to Rotate</a></li>
+<li><a href="#transforms">Transforms - Position + Rotation</a></li>
+<li><a href="#real-world-applications">Real-World Applications</a></li>
+<li><a href="#interview-questions">Common Interview Questions</a></li>
+</ol>
+<hr>
+<p><a name="why-this-matters" href=""></a></p>
+<h2 id="1-why-this-matters-for-optitrackvr">1. Why This Matters for OptiTrack/VR </h2>
+<h3 id="what-optitrack-does">What OptiTrack Does </h3>
+<p>OptiTrack cameras track <strong>reflective markers</strong> in 3D space. When you wear a VR headset with markers attached:</p>
+<ol>
+<li>Cameras detect marker positions (x, y, z coordinates)</li>
+<li>Software calculates the headset's <strong>position</strong> and <strong>rotation</strong></li>
+<li>VR system uses this to update what you see</li>
+</ol>
+<h3 id="the-math-you-need">The Math You Need </h3>
+<ul>
+<li><strong>Vectors:</strong> Represent positions, directions, velocities</li>
+<li><strong>Quaternions:</strong> Represent rotations (better than Euler angles)</li>
+<li><strong>Transforms:</strong> Combine position + rotation to describe object state</li>
+</ul>
+<p><strong>In interviews, they want to see you understand the 3D math behind tracking systems.</strong></p>
+<hr>
+<p><a name="coordinate-systems" href=""></a></p>
+<h2 id="2-3d-coordinate-systems">2. 3D Coordinate Systems </h2>
+<h3 id="right-handed-coordinate-system-optitrack-standard">Right-Handed Coordinate System (OptiTrack Standard) </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>      Y (up)
+      |
+      |
+      +------ X (right)
+     /
+    /
+   Z (forward toward you)
+</code></pre><p><strong>Conventions:</strong></p>
+<ul>
+<li><strong>X-axis:</strong> Right</li>
+<li><strong>Y-axis:</strong> Up</li>
+<li><strong>Z-axis:</strong> Forward (toward you in OpenGL/OptiTrack)</li>
+</ul>
+<h3 id="world-space-vs-local-space">World Space vs Local Space </h3>
+<p><strong>World Space:</strong> The global coordinate system (the room)</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>VR Headset at world position (2, 1.5, 3)
+</code></pre><p><strong>Local Space:</strong> Relative to an object</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Marker on headset at local position (0.1, 0.05, -0.1) relative to headset center
+</code></pre><p><strong>Transformation:</strong> Converting local → world coordinates</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>World Position = Object Position + Rotate(Local Position)
+</code></pre><hr>
+<p><a name="vectors" href=""></a></p>
+<h2 id="3-vectors---the-foundation">3. Vectors - The Foundation </h2>
+<h3 id="what-is-a-vector">What is a Vector? </h3>
+<p>A vector is a <strong>direction and magnitude</strong> in 3D space.</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">Vec3</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Vec3 position <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">2.0f</span><span class="token punctuation">,</span> <span class="token number">3.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>     <span class="token comment">// A point in space</span>
+Vec3 velocity <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.2f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token comment">// Movement direction and speed</span>
+Vec3 forward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>     <span class="token comment">// Direction headset is facing</span>
+</code></pre><h3 id="visualizing-vectors">Visualizing Vectors </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>    (x=2, y=3)
+      *
+     /|
+    / |
+   /  | y=3
+  /   |
+ /____|
+   x=2
+
+Magnitude (length) = sqrt(2² + 3²) = sqrt(13) ≈ 3.6
+</code></pre><h3 id="types-of-vectors">Types of Vectors </h3>
+<p><strong>Position Vector:</strong> A point in space</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 headsetPos <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.5f</span><span class="token punctuation">,</span> <span class="token number">1.8f</span><span class="token punctuation">,</span> <span class="token number">0.5f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment">// Headset location</span>
+</code></pre><p><strong>Direction Vector:</strong> Which way something is pointing (usually normalized)</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 forward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token comment">// Looking forward</span>
+</code></pre><p><strong>Velocity Vector:</strong> Speed and direction of movement</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 velocity <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.1f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>    <span class="token comment">// Moving right at 0.1 units/frame</span>
+</code></pre><hr>
+<p><a name="vector-operations" href=""></a></p>
+<h2 id="4-vector-operations">4. Vector Operations </h2>
+<h3 id="vector-addition-">Vector Addition (+) </h3>
+<p><strong>Use case:</strong> Applying offsets, combining movements</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v1 = (1, 2, 3)
+v2 = (4, 5, 6)
+v1 + v2 = (1+4, 2+5, 3+6) = (5, 7, 9)
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 position <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5.0f</span><span class="token punctuation">,</span> <span class="token number">2.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 offset <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.1f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 newPosition <span class="token operator">=</span> position <span class="token operator">+</span> offset<span class="token punctuation">;</span>  <span class="token comment">// Move 0.1 units to the right</span>
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token keyword keyword-operator">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> other<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>x <span class="token operator">+</span> other<span class="token punctuation">.</span>x<span class="token punctuation">,</span> y <span class="token operator">+</span> other<span class="token punctuation">.</span>y<span class="token punctuation">,</span> z <span class="token operator">+</span> other<span class="token punctuation">.</span>z<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="vector-subtraction--">Vector Subtraction (-) </h3>
+<p><strong>Use case:</strong> Finding direction between two points</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v1 = (5, 3, 2)
+v2 = (2, 1, 1)
+v1 - v2 = (3, 2, 1)  // Direction from v2 to v1
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 headPos <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2.0f</span><span class="token punctuation">,</span> <span class="token number">1.5f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 controllerPos <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.2f</span><span class="token punctuation">,</span> <span class="token number">0.5f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 direction <span class="token operator">=</span> headPos <span class="token operator">-</span> controllerPos<span class="token punctuation">;</span>  <span class="token comment">// Vector pointing from controller to head</span>
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token keyword keyword-operator">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> other<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>x <span class="token operator">-</span> other<span class="token punctuation">.</span>x<span class="token punctuation">,</span> y <span class="token operator">-</span> other<span class="token punctuation">.</span>y<span class="token punctuation">,</span> z <span class="token operator">-</span> other<span class="token punctuation">.</span>z<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="scalar-multiplication-">Scalar Multiplication (*) </h3>
+<p><strong>Use case:</strong> Scaling vectors (change magnitude, keep direction)</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v = (2, 3, 1)
+v * 2 = (4, 6, 2)  // Twice as long, same direction
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 velocity <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 fastVelocity <span class="token operator">=</span> velocity <span class="token operator">*</span> <span class="token number">3.0f</span><span class="token punctuation">;</span>  <span class="token comment">// 3x speed</span>
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token keyword keyword-operator">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword keyword-float">float</span> scalar<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>x <span class="token operator">*</span> scalar<span class="token punctuation">,</span> y <span class="token operator">*</span> scalar<span class="token punctuation">,</span> z <span class="token operator">*</span> scalar<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="magnitude-length">Magnitude (Length) </h3>
+<p><strong>Use case:</strong> How far? How fast? Distance from origin.</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v = (3, 4, 0)
+|v| = sqrt(3² + 4² + 0²) = sqrt(9 + 16) = sqrt(25) = 5
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 velocity <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3.0f</span><span class="token punctuation">,</span> <span class="token number">4.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> speed <span class="token operator">=</span> velocity<span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// = 5.0</span>
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> <span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>x<span class="token operator">*</span>x <span class="token operator">+</span> y<span class="token operator">*</span>y <span class="token operator">+</span> z<span class="token operator">*</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="normalization-unit-vector">Normalization (Unit Vector) </h3>
+<p><strong>Use case:</strong> Direction without magnitude (length = 1)</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v = (3, 4, 0)
+|v| = 5
+normalized = (3/5, 4/5, 0/5) = (0.6, 0.8, 0)
+|normalized| = 1
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 direction <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3.0f</span><span class="token punctuation">,</span> <span class="token number">4.0f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 unitDirection <span class="token operator">=</span> direction<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// (0.6, 0.8, 0) - same direction, length 1</span>
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> mag <span class="token operator">=</span> <span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>mag <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment">// Avoid division by zero</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>x <span class="token operator">/</span> mag<span class="token punctuation">,</span> y <span class="token operator">/</span> mag<span class="token punctuation">,</span> z <span class="token operator">/</span> mag<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Why normalize?</strong></p>
+<ul>
+<li>Rotations require unit vectors</li>
+<li>Comparing directions (ignoring magnitude)</li>
+<li>Consistent movement speed</li>
+</ul>
+<h3 id="dot-product-">Dot Product (·) </h3>
+<p><strong>Use case:</strong> Angle between vectors, projection, checking if perpendicular</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v1 = (1, 0, 0)
+v2 = (0, 1, 0)
+v1 · v2 = (1×0) + (0×1) + (0×0) = 0  (perpendicular!)
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-float">float</span> <span class="token function">dot</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> other<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> x<span class="token operator">*</span>other<span class="token punctuation">.</span>x <span class="token operator">+</span> y<span class="token operator">*</span>other<span class="token punctuation">.</span>y <span class="token operator">+</span> z<span class="token operator">*</span>other<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Relationship to angle:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v1 · v2 = |v1| × |v2| × cos(θ)
+
+For unit vectors:
+v1 · v2 = cos(θ)
+</code></pre><p><strong>Interpretation:</strong></p>
+<ul>
+<li><code>dot = 1</code>: Same direction (0° angle)</li>
+<li><code>dot = 0</code>: Perpendicular (90° angle)</li>
+<li><code>dot = -1</code>: Opposite direction (180° angle)</li>
+<li><code>dot &gt; 0</code>: Less than 90° apart</li>
+<li><code>dot &lt; 0</code>: More than 90° apart</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 forward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 toTarget <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> alignment <span class="token operator">=</span> forward<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dot</span><span class="token punctuation">(</span>toTarget<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// If alignment &gt; 0.7, target is in front of you</span>
+</code></pre><h3 id="cross-product-">Cross Product (×) </h3>
+<p><strong>Use case:</strong> Find perpendicular vector, calculate rotation axis</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>v1 = (1, 0, 0)  // X-axis
+v2 = (0, 1, 0)  // Y-axis
+v1 × v2 = (0, 0, 1)  // Z-axis (perpendicular to both)
+</code></pre><p><strong>Formula:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">cross</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> other<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>
+        y <span class="token operator">*</span> other<span class="token punctuation">.</span>z <span class="token operator">-</span> z <span class="token operator">*</span> other<span class="token punctuation">.</span>y<span class="token punctuation">,</span>  <span class="token comment">// x component</span>
+        z <span class="token operator">*</span> other<span class="token punctuation">.</span>x <span class="token operator">-</span> x <span class="token operator">*</span> other<span class="token punctuation">.</span>z<span class="token punctuation">,</span>  <span class="token comment">// y component</span>
+        x <span class="token operator">*</span> other<span class="token punctuation">.</span>y <span class="token operator">-</span> y <span class="token operator">*</span> other<span class="token punctuation">.</span>x   <span class="token comment">// z component</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Properties:</strong></p>
+<ul>
+<li><strong>Order matters:</strong> <code>v1 × v2 = -(v2 × v1)</code></li>
+<li><strong>Right-hand rule:</strong> Curl fingers from v1 to v2, thumb points to result</li>
+<li><strong>Result is perpendicular</strong> to both input vectors</li>
+<li><strong>Magnitude = |v1| × |v2| × sin(θ)</strong> (area of parallelogram)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 up <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 forward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Vec3 right <span class="token operator">=</span> up<span class="token punctuation">.</span><span class="token function">cross</span><span class="token punctuation">(</span>forward<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// (1, 0, 0)</span>
+</code></pre><hr>
+<p><a name="quaternions" href=""></a></p>
+<h2 id="5-quaternions---the-right-way-to-rotate">5. Quaternions - The Right Way to Rotate </h2>
+<h3 id="the-problem-with-euler-angles">The Problem with Euler Angles </h3>
+<p><strong>Euler angles:</strong> Rotation as three angles (pitch, yaw, roll)</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">EulerAngles</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> pitch<span class="token punctuation">;</span>  <span class="token comment">// Rotation around X (nodding)</span>
+    <span class="token keyword keyword-float">float</span> yaw<span class="token punctuation">;</span>    <span class="token comment">// Rotation around Y (shaking head "no")</span>
+    <span class="token keyword keyword-float">float</span> roll<span class="token punctuation">;</span>   <span class="token comment">// Rotation around Z (tilting head)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Problems:</strong></p>
+<ol>
+<li><strong>Gimbal Lock:</strong> At certain angles, you lose a degree of freedom
+<ul>
+<li>Pitch to 90° → roll and yaw become the same axis!</li>
+</ul>
+</li>
+<li><strong>Interpolation:</strong> Can't smoothly blend between rotations</li>
+<li><strong>Order dependent:</strong> XYZ rotation ≠ ZYX rotation</li>
+</ol>
+<p><strong>Why VR cares:</strong> When you look up (pitch 90°), the headset can't distinguish roll from yaw = BAD tracking!</p>
+<h3 id="what-is-a-quaternion">What is a Quaternion? </h3>
+<p>A quaternion is a <strong>4D number</strong> that represents rotation:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-struct">struct</span> <span class="token class-name">Quaternion</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-float">float</span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">;</span>  <span class="token comment">// Vector part (rotation axis)</span>
+    <span class="token keyword keyword-float">float</span> w<span class="token punctuation">;</span>        <span class="token comment">// Scalar part (rotation amount)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Think of it as:</strong> "Rotate by angle θ around axis (x, y, z)"</p>
+<h3 id="axis-angle-representation">Axis-Angle Representation </h3>
+<p><strong>Most intuitive way to think about rotation:</strong></p>
+<ul>
+<li><strong>Axis:</strong> Direction vector (normalized)</li>
+<li><strong>Angle:</strong> How much to rotate around that axis</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Rotate 90° around Y-axis:
+  axis = (0, 1, 0)
+  angle = π/2 (90 degrees in radians)
+</code></pre><p><strong>Converting to Quaternion:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token function">Quaternion</span><span class="token punctuation">(</span>Vec3 axis<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> angleRadians<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Vec3 normalizedAxis <span class="token operator">=</span> axis<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> halfAngle <span class="token operator">=</span> angleRadians <span class="token operator">/</span> <span class="token number">2.0f</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-float">float</span> sinHalf <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>halfAngle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    x <span class="token operator">=</span> normalizedAxis<span class="token punctuation">.</span>x <span class="token operator">*</span> sinHalf<span class="token punctuation">;</span>
+    y <span class="token operator">=</span> normalizedAxis<span class="token punctuation">.</span>y <span class="token operator">*</span> sinHalf<span class="token punctuation">;</span>
+    z <span class="token operator">=</span> normalizedAxis<span class="token punctuation">.</span>z <span class="token operator">*</span> sinHalf<span class="token punctuation">;</span>
+    w <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>halfAngle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Why half angle?</strong> Math reasons (quaternion double-cover property) - just remember to use <code>angle/2</code>.</p>
+<h3 id="quaternion-multiplication-combining-rotations">Quaternion Multiplication (Combining Rotations) </h3>
+<p><strong>Use case:</strong> Apply multiple rotations</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Quaternion <span class="token function">rotate90Y</span><span class="token punctuation">(</span>Vec3<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> M_PI<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Rotate 90° around Y</span>
+Quaternion <span class="token function">rotate45Z</span><span class="token punctuation">(</span>Vec3<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> M_PI<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Then rotate 45° around Z</span>
+Quaternion combined <span class="token operator">=</span> rotate45Z <span class="token operator">*</span> rotate90Y<span class="token punctuation">;</span> <span class="token comment">// Combined rotation</span>
+</code></pre><p><strong>Important:</strong> <strong>Order matters!</strong> <code>q1 * q2 ≠ q2 * q1</code></p>
+<p><strong>Formula:</strong> (You don't need to memorize, just implement from TODO)</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Quaternion <span class="token keyword keyword-operator">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Quaternion<span class="token operator">&amp;</span> q<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    Quaternion result<span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span>w <span class="token operator">=</span> w<span class="token operator">*</span>q<span class="token punctuation">.</span>w <span class="token operator">-</span> x<span class="token operator">*</span>q<span class="token punctuation">.</span>x <span class="token operator">-</span> y<span class="token operator">*</span>q<span class="token punctuation">.</span>y <span class="token operator">-</span> z<span class="token operator">*</span>q<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span>x <span class="token operator">=</span> w<span class="token operator">*</span>q<span class="token punctuation">.</span>x <span class="token operator">+</span> x<span class="token operator">*</span>q<span class="token punctuation">.</span>w <span class="token operator">+</span> y<span class="token operator">*</span>q<span class="token punctuation">.</span>z <span class="token operator">-</span> z<span class="token operator">*</span>q<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span>y <span class="token operator">=</span> w<span class="token operator">*</span>q<span class="token punctuation">.</span>y <span class="token operator">-</span> x<span class="token operator">*</span>q<span class="token punctuation">.</span>z <span class="token operator">+</span> y<span class="token operator">*</span>q<span class="token punctuation">.</span>w <span class="token operator">+</span> z<span class="token operator">*</span>q<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span>z <span class="token operator">=</span> w<span class="token operator">*</span>q<span class="token punctuation">.</span>z <span class="token operator">+</span> x<span class="token operator">*</span>q<span class="token punctuation">.</span>y <span class="token operator">-</span> y<span class="token operator">*</span>q<span class="token punctuation">.</span>x <span class="token operator">+</span> z<span class="token operator">*</span>q<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="rotating-a-vector-with-a-quaternion">Rotating a Vector with a Quaternion </h3>
+<p><strong>Use case:</strong> Apply headset rotation to a forward vector</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 localForward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+Quaternion headsetRotation <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+Vec3 worldForward <span class="token operator">=</span> headsetRotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>localForward<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Simplified formula:</strong> (Efficient version)</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> v<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    Vec3 qvec <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    Vec3 uv <span class="token operator">=</span> qvec<span class="token punctuation">.</span><span class="token function">cross</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Vec3 uuv <span class="token operator">=</span> qvec<span class="token punctuation">.</span><span class="token function">cross</span><span class="token punctuation">(</span>uv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> v <span class="token operator">+</span> <span class="token punctuation">(</span>uv <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">2.0f</span> <span class="token operator">*</span> w<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>uuv <span class="token operator">*</span> <span class="token number">2.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="identity-quaternion-no-rotation">Identity Quaternion (No Rotation) </h3>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Quaternion identity <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment">// No rotation</span>
+</code></pre><h3 id="why-quaternions-are-better">Why Quaternions are Better </h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Euler Angles</th>
+<th>Quaternions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gimbal lock</td>
+<td>✗ Yes</td>
+<td>✓ No</td>
+</tr>
+<tr>
+<td>Smooth interpolation</td>
+<td>✗ Hard</td>
+<td>✓ Easy (SLERP)</td>
+</tr>
+<tr>
+<td>Combining rotations</td>
+<td>✗ Complex</td>
+<td>✓ Simple (multiply)</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>3 floats</td>
+<td>4 floats</td>
+</tr>
+<tr>
+<td>Human-readable</td>
+<td>✓ Yes</td>
+<td>✗ No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For VR/OptiTrack:</strong> Always use quaternions for internal representation.</p>
+<hr>
+<p><a name="transforms" href=""></a></p>
+<h2 id="6-transforms---position--rotation">6. Transforms - Position + Rotation </h2>
+<h3 id="what-is-a-transform">What is a Transform? </h3>
+<p>A <strong>transform</strong> describes an object's state in 3D space:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-class">class</span> <span class="token class-name">Transform</span> <span class="token punctuation">{</span>
+    Vec3 position<span class="token punctuation">;</span>        <span class="token comment">// Where is it?</span>
+    Quaternion rotation<span class="token punctuation">;</span>  <span class="token comment">// Which way is it facing?</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>(Sometimes also includes <code>scale</code>, but OptiTrack rigid bodies don't scale)</p>
+<h3 id="local-to-world-transformation">Local to World Transformation </h3>
+<p><strong>Problem:</strong> You have a marker's position relative to a headset. Where is it in the room?</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">transformPoint</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> Vec3<span class="token operator">&amp;</span> localPoint<span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. Rotate the local point by the object's rotation</span>
+    Vec3 rotated <span class="token operator">=</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>localPoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 2. Add the object's position</span>
+    <span class="token keyword keyword-return">return</span> rotated <span class="token operator">+</span> position<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Example:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Headset Transform:
+  position = (2, 1.5, 3)
+  rotation = 90° around Y
+
+Local marker position: (0.1, 0, 0)  // 0.1m to the right of headset center
+
+World position = rotate(0.1, 0, 0) + (2, 1.5, 3)
+               = (0, 0, -0.1) + (2, 1.5, 3)    // After 90° Y rotation, right becomes -forward
+               = (2, 1.5, 2.9)
+</code></pre><h3 id="direction-vectors">Direction Vectors </h3>
+<p>Objects have <strong>local</strong> direction vectors:</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 localForward <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  <span class="token comment">// -Z is forward (OpenGL convention)</span>
+Vec3 localUp <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>        <span class="token comment">// +Y is up</span>
+Vec3 localRight <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>     <span class="token comment">// +X is right</span>
+</code></pre><p><strong>Getting world-space directions:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 <span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Vec3 <span class="token function">up</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Vec3 <span class="token function">right</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-return">return</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Use case:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Transform headset <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+Vec3 lookDirection <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Which way is the user looking?</span>
+
+<span class="token comment">// Move 0.5 units in the direction the headset is facing</span>
+Vec3 newPos <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">getPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>lookDirection <span class="token operator">*</span> <span class="token number">0.5f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<p><a name="real-world-applications" href=""></a></p>
+<h2 id="7-real-world-applications">7. Real-World Applications </h2>
+<h3 id="optitrack-tracking-pipeline">OptiTrack Tracking Pipeline </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1. Cameras detect marker positions (2D in each camera)
+   ↓
+2. Triangulation → 3D marker positions in world space
+   ↓
+3. Marker clustering → Identify which markers belong to which rigid body
+   ↓
+4. Rigid body pose estimation → Calculate position + rotation (quaternion)
+   ↓
+5. Send to VR application → Update headset/controller transforms
+</code></pre><h3 id="common-calculations">Common Calculations </h3>
+<p><strong>Distance between headset and controller:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 headPos <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">getPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vec3 controllerPos <span class="token operator">=</span> controller<span class="token punctuation">.</span><span class="token function">getPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vec3 diff <span class="token operator">=</span> headPos <span class="token operator">-</span> controllerPos<span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> distance <span class="token operator">=</span> diff<span class="token punctuation">.</span><span class="token function">magnitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Is target in front of headset?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 toTarget <span class="token operator">=</span> targetPos <span class="token operator">-</span> headsetPos<span class="token punctuation">;</span>
+Vec3 forward <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> alignment <span class="token operator">=</span> toTarget<span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dot</span><span class="token punctuation">(</span>forward<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>alignment <span class="token operator">&gt;</span> <span class="token number">0.7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// cos(45°) ≈ 0.7</span>
+    <span class="token comment">// Target is in front</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Calculate velocity:</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 currentPos <span class="token operator">=</span> headset<span class="token punctuation">.</span><span class="token function">getPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vec3 previousPos <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> deltaTime <span class="token operator">=</span> <span class="token number">1.0f</span> <span class="token operator">/</span> <span class="token number">120.0f</span><span class="token punctuation">;</span>  <span class="token comment">// 120 FPS</span>
+Vec3 velocity <span class="token operator">=</span> <span class="token punctuation">(</span>currentPos <span class="token operator">-</span> previousPos<span class="token punctuation">)</span> <span class="token operator">/</span> deltaTime<span class="token punctuation">;</span>
+</code></pre><p><strong>Smooth rotation interpolation (SLERP):</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Blend between two rotations smoothly</span>
+Quaternion <span class="token function">slerp</span><span class="token punctuation">(</span>Quaternion q1<span class="token punctuation">,</span> Quaternion q2<span class="token punctuation">,</span> <span class="token keyword keyword-float">float</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// t = 0 → q1, t = 1 → q2, t = 0.5 → halfway</span>
+    <span class="token comment">// (Implementation complex, but concept simple)</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<p><a name="interview-questions" href=""></a></p>
+<h2 id="8-common-interview-questions">8. Common Interview Questions </h2>
+<h3 id="conceptual-questions">Conceptual Questions </h3>
+<p><strong>Q: What's the difference between a position and a direction vector?</strong></p>
+<ul>
+<li>Position: A point in space (origin matters)</li>
+<li>Direction: A direction and magnitude (origin doesn't matter, often normalized)</li>
+</ul>
+<p><strong>Q: Why use quaternions instead of Euler angles?</strong></p>
+<ul>
+<li>No gimbal lock</li>
+<li>Smooth interpolation</li>
+<li>Easy to combine rotations</li>
+<li>Better for real-time systems</li>
+</ul>
+<p><strong>Q: What does the dot product tell you?</strong></p>
+<ul>
+<li>How aligned two vectors are</li>
+<li>If result &gt; 0: less than 90° apart</li>
+<li>If result = 0: perpendicular</li>
+<li>If result &lt; 0: more than 90° apart</li>
+</ul>
+<p><strong>Q: What does the cross product give you?</strong></p>
+<ul>
+<li>A vector perpendicular to both input vectors</li>
+<li>Direction follows right-hand rule</li>
+<li>Used to find rotation axes</li>
+</ul>
+<p><strong>Q: How do you convert from local space to world space?</strong></p>
+<ol>
+<li>Rotate the local point by the object's rotation</li>
+<li>Add the object's position</li>
+</ol>
+<h3 id="practical-questions">Practical Questions </h3>
+<p><strong>Q: Given two points, how do you find the direction from A to B?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 direction <span class="token operator">=</span> <span class="token punctuation">(</span>B <span class="token operator">-</span> A<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Q: How do you check if a point is in front of the camera?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Vec3 toPoint <span class="token operator">=</span> <span class="token punctuation">(</span>point <span class="token operator">-</span> cameraPos<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vec3 forward <span class="token operator">=</span> camera<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-float">float</span> dot <span class="token operator">=</span> toPoint<span class="token punctuation">.</span><span class="token function">dot</span><span class="token punctuation">(</span>forward<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>dot <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* in front */</span> <span class="token punctuation">}</span>
+</code></pre><p><strong>Q: How do you rotate a vector 90° around the Y-axis?</strong></p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code>Quaternion <span class="token function">rot</span><span class="token punctuation">(</span>Vec3<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> M_PI<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Vec3 rotated <span class="token operator">=</span> rot<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>originalVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<h2 id="quick-reference-formulas">Quick Reference Formulas </h2>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// Vector Operations</span>
+magnitude <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>x² <span class="token operator">+</span> y² <span class="token operator">+</span> z²<span class="token punctuation">)</span>
+normalize <span class="token operator">=</span> v <span class="token operator">/</span> magnitude
+<span class="token function">dot</span><span class="token punctuation">(</span>v1<span class="token punctuation">,</span> v2<span class="token punctuation">)</span> <span class="token operator">=</span> v1<span class="token punctuation">.</span>x<span class="token operator">*</span>v2<span class="token punctuation">.</span>x <span class="token operator">+</span> v1<span class="token punctuation">.</span>y<span class="token operator">*</span>v2<span class="token punctuation">.</span>y <span class="token operator">+</span> v1<span class="token punctuation">.</span>z<span class="token operator">*</span>v2<span class="token punctuation">.</span>z
+<span class="token function">cross</span><span class="token punctuation">(</span>v1<span class="token punctuation">,</span> v2<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span>v1<span class="token punctuation">.</span>y<span class="token operator">*</span>v2<span class="token punctuation">.</span>z <span class="token operator">-</span> v1<span class="token punctuation">.</span>z<span class="token operator">*</span>v2<span class="token punctuation">.</span>y<span class="token punctuation">,</span>
+                 v1<span class="token punctuation">.</span>z<span class="token operator">*</span>v2<span class="token punctuation">.</span>x <span class="token operator">-</span> v1<span class="token punctuation">.</span>x<span class="token operator">*</span>v2<span class="token punctuation">.</span>z<span class="token punctuation">,</span>
+                 v1<span class="token punctuation">.</span>x<span class="token operator">*</span>v2<span class="token punctuation">.</span>y <span class="token operator">-</span> v1<span class="token punctuation">.</span>y<span class="token operator">*</span>v2<span class="token punctuation">.</span>x<span class="token punctuation">)</span>
+
+<span class="token comment">// Quaternion from axis-angle</span>
+half <span class="token operator">=</span> angle <span class="token operator">/</span> <span class="token number">2</span>
+q<span class="token punctuation">.</span>x <span class="token operator">=</span> axis<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span>half<span class="token punctuation">)</span>
+q<span class="token punctuation">.</span>y <span class="token operator">=</span> axis<span class="token punctuation">.</span>y <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span>half<span class="token punctuation">)</span>
+q<span class="token punctuation">.</span>z <span class="token operator">=</span> axis<span class="token punctuation">.</span>z <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span>half<span class="token punctuation">)</span>
+q<span class="token punctuation">.</span>w <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>half<span class="token punctuation">)</span>
+
+<span class="token comment">// Transform point</span>
+worldPos <span class="token operator">=</span> rotation<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>localPos<span class="token punctuation">)</span> <span class="token operator">+</span> position
+</code></pre><hr>
+<h2 id="key-takeaways">Key Takeaways </h2>
+<p>✓ <strong>Vectors</strong> represent positions, directions, velocities in 3D<br>
+✓ <strong>Dot product</strong> measures alignment (cos of angle)<br>
+✓ <strong>Cross product</strong> finds perpendicular vectors<br>
+✓ <strong>Normalize</strong> to get direction without magnitude<br>
+✓ <strong>Quaternions</strong> avoid gimbal lock (critical for VR!)<br>
+✓ <strong>Transforms</strong> combine position + rotation<br>
+✓ <strong>Local → World</strong> transformation: rotate then translate</p>
+<p><strong>You're now equipped to tackle Session 3 exercises!</strong> 🚀</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

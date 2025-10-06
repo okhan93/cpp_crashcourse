@@ -26,7 +26,7 @@ struct Vec3 {
     Vec3 operator+(const Vec3& other) const {
         // YOUR CODE HERE
         // Return a new Vec3 with (x+other.x, y+other.y, z+other.z)
-        Vec3 new_vec = {Vec3.x + }
+        return {x+other.x, y+other.y, z+other.z};
     }
 
     // TODO 1b: Vector subtraction
@@ -34,6 +34,7 @@ struct Vec3 {
     Vec3 operator-(const Vec3& other) const {
         // YOUR CODE HERE
         // Return a new Vec3 with (x-other.x, y-other.y, z-other.z)
+        return {x-other.x, y-other.y, z-other.z};
     }
 
     // TODO 1c: Scalar multiplication
@@ -41,6 +42,7 @@ struct Vec3 {
     Vec3 operator*(float scalar) const {
         // YOUR CODE HERE
         // Return a new Vec3 with (x*scalar, y*scalar, z*scalar)
+        return {x*scalar, y*scalar, z*scalar};
     }
 
     // TODO 1d: Magnitude (length) of vector
@@ -48,6 +50,7 @@ struct Vec3 {
     float magnitude() const {
         // YOUR CODE HERE
         // Return sqrt(x*x + y*y + z*z)
+        return sqrt(x*x+y*y+z*z);
     }
 
     // TODO 1e: Normalize (make length = 1)
@@ -56,6 +59,13 @@ struct Vec3 {
         // YOUR CODE HERE
         // Get magnitude, then return Vec3(x/mag, y/mag, z/mag)
         // Handle mag == 0 case by returning (0,0,0)
+        float mag = magnitude();
+        if (mag==0){
+            return {0,0,0};
+        }else {
+        return {x/mag,y/mag,z/mag};
+        }
+
     }
 
     // TODO 1f: Dot product
